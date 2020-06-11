@@ -1,22 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Home from './screens/Home';
-import Addchurch from './screens/Addchurch';
-import Signup from './screens/Signup';
-import Login from './screens/Login';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import Nav from './components/Nav';
+import Home from './components/Home';
+import Addchurch from './components/Addchurch';
+import Signup from './components/Signup';
+import Login from './components/Login';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 const App = () =>
 (
   <Router>
-    <div>
-      <Route path="/" component={Home} />
+    <div className="App">
+    <Nav />
+      <Switch>      
+      <Route path="/" exact component={Home} />
       <Route path="/Addchurch" component={Addchurch} />
       <Route path="/Signup" component={Signup} />
       <Route path="/Login" component={Login} />
-
+      </Switch>
     </div>
   </Router>
+
+
 )
 
 ReactDOM.render(<App />, document.getElementById('root'));
