@@ -4,7 +4,7 @@ import Home from './screens/Home';
 import Addchurch from './screens/Addchurch';
 import Signup from './screens/Signup';
 import Login from './screens/Login';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, link } from 'react-router-dom';
 
 const App = () =>
 (
