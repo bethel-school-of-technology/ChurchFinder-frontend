@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 
-
 class Signup extends React.Component {
 
     constructor(props) {
@@ -20,12 +19,10 @@ class Signup extends React.Component {
         this.setState({ [e.target.name]: e.target.value })
     }
 
-
-
     handleSubmit = e => {
         e.preventDefault()
         console.log(this.state)
-        axios.post("http://localhost:5000/", this.state)
+        axios.post("http://localhost:5000/users/signup", this.state)
             .then(response => {
                 console.log(response)
                 this.setState({
