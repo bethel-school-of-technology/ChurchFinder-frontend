@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Nav from './components/Nav';
-import Home from './components/Home';
+import Home from './screens/Home';
 import Addchurch from './components/Addchurch';
 import Signup from './components/Signup';
 import Login from './components/Login';
@@ -17,7 +17,8 @@ const App = () =>
       <Route path="/Addchurch" component={Addchurch} />
       <Route path="/Signup" component={Signup} />
       <Route path="/Login" component={Login} />
-      </Switch>
+      </Switch>  
+     
     </div>
   </Router>
 

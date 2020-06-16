@@ -94,6 +94,12 @@ button:hover {
   display: table;
 }
 
+.mapContainer {
+  border: solid 2px black;
+  margin-top: 20px;
+  margin-left: 700px;
+}
+
 /* Change styles for cancel button and signup button on extra small screens */
 @media screen and (max-width: 300px) {
   .cancelbtn, .signupbtn {
