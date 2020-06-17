@@ -7,22 +7,24 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-const App = () =>
-(
-  <Router>
-    <div className="App">
-    <Nav />
-      <Switch>      
-      <Route path="/" exact component={Home} />
-      <Route path="/Addchurch" component={Addchurch} />
-      <Route path="/Signup" component={Signup} />
-      <Route path="/Login" component={Login} />
-      </Switch>
-    </div>
-  </Router>
+function App() { 
+
+  return (
+    <Router>
+      <div className="App">
+        <Nav />
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/Addchurch" component={Addchurch} />
+          <Route path="/Signup" component={Signup} />
+          <Route path="/Login" component={Login} />
+        </Switch>
+      </div>
+    </Router>
 
 
-)
+  )
+}
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
