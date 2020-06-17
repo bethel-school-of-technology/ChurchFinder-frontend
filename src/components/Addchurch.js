@@ -1,40 +1,93 @@
 import React from 'react';
-
-const Addchurch = () =>
-    (
-        <div>
-            <h1>Add Your Church</h1>
-            <label htmlFor="churchname"><b>Church Name</b></label>
-            <input type="text" placeholder="Enter Church Name" name="churchname" required></input>
-
-            <label htmlFor="address"><b>Mailing Address One</b></label>
-            <input type="text" placeholder="Enter Mailing Address" name="address" required></input>
+import axios from 'axios';
 
 
-            <label htmlFor="address2"><b>Mailing Address Two</b></label>
-            <input type="text" placeholder="Enter Mailing Address 2" name="address2" required></input>
+class Addchurch extends React.Component {
+    constructor(props) {
+        super(props)
 
-            <label htmlFor="city"><b>City</b></label>
-            <input type="text" placeholder="Enter City" name="city" required></input>
+        this.state = {
+            name: "",
+            description: "",
+            mailing_one: "",
+            mailing_two: "",
+            city: "",
+            state: "",
+            postalcode: "",
+            denomination: "",
+            web_url: ""
+        };
+    }
 
-            <label htmlFor="state"><b>State</b></label>
-            <input type="text" placeholder="Enter State" name="state" required></input>
+    handleChange = (e) => {
+        this.setState({ [e.target.name ]: e.target.value })
+    }
 
-            <label htmlFor="zipcode"><b>Zipcode</b></label>
-            <input type="number" placeholder="Enter Zipcode" name="zipcode" required></input><br></br>
+    handleSubmit = e => {
+        e.preventDefault()
+        console.log(this.state)
+        axios.post("http://localhost:5000/churches/addchurch", this.state)
+            .then(response => {
+                console.log(response)
+                this.setState({
+                    result:response
+                });
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
 
-            <label htmlFor="denomination"><b>Denomination</b></label>
-            <input type="text" placeholder="Enter Denomination" name="denomination" required></input>
+    render() {
+        const { churchname, description, mailing_one, mailing_two, city, state, postalcode, denomination, web_url } = this.state
+        return (
+            <form id="addchurch" onSubmit={this.handleSubmit} method="POST" action="/churches/addchurch">           
+                <h1 className="formtitle">Please Add Your Church!</h1>
+                <div>
+                <label htmlFor="name"><b>Enter Church Name</b></label>
+                <input type="text" placeholder="Church Name" name="name" value={churchname} required />
+                </div>
+                <div>
+                <label htmlFor="name"><b>Enter Description</b></label><br></br>
+                <textarea type="text" placeholder="Enter Description" name="description" value={description} onChange={this.handleChange} required></textarea>
+                </div>
+                <br></br>
+                <div>
+                <label htmlFor="name"><b>Enter Mailing Address One</b></label>
+                <input type="text" placeholder="Enter Mailing Address One" name="mailing_one" value={mailing_one} onChange={this.handleChange} required />
+                </div>
+                <div>
+                <label htmlFor="name"><b>Mailing Address Two</b></label>
+                <input type="text" placeholder="Enter Mailing Address Two" name="mailing_two" value={mailing_two} onChange={this.handleChange} required />
+                </div>
+                <div>
+                <label htmlFor="name"><b>City</b></label>
+                <input type="text" placeholder="Enter City" name="city" value={city} onChange={this.handleChange} required />
+                </div>
+                <div>
+                <label htmlFor="name"><b>State</b></label>
+                <input type="text" placeholder="Enter State" name="state" value={state} onChange={this.handleChange} required></input>
+                </div>
+                <div>
+                <label htmlFor="name"><b>Zipcode</b></label>
+                <input type="number" placeholder="Enter Zipcode" name="postalcode" value={postalcode} onChange={this.handleChange} required />
+                </div>
+                <br></br>
+                <div>
+                <label htmlFor="name"><b>Denomination</b></label>
+                <input type="text" placeholder="Enter Denomination" name="denomination" value={denomination} onChange={this.handleChange} required />
+                </div>
+                <div>
+                <label htmlFor="name"><b>Web URL</b></label>
+                <input type="text" placeholder="Enter URL" name="web_url" value={web_url} onChange={this.handleChange} required />
+                </div>
+                <div className="clearfix">
+                    <button type="submit" className="signupbtn">Sign Up</button>
+                </div>
+            </form>
+        )
 
-            <label htmlFor="weburl"><b>Web URL</b></label>
-            <input type="text" placeholder="Enter URL" name="weburl" required></input>
-
-            <div className="clearfix">
-                <button type="button" className="cancelbtn">Cancel</button>
-                <button type="submit" className="signupbtn">Sign Up</button>
-            </div>
-        </div>
-    )
-
+    }
+}
 
 export default Addchurch;
