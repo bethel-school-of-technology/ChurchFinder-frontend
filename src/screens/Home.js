@@ -1,11 +1,12 @@
 import React from 'react';
+import Map from '../components/Map';
+
 
 const Home = () => (
-    <div className="App-container">
-     
-   
+    <div>
+    <Map />
     </div>
-     
+ 
   
 );
 
