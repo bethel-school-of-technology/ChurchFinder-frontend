@@ -39,17 +39,18 @@ class Addchurch extends React.Component {
     }
 
     render() {
-        const { churchname, description, mailing_one, mailing_two, city, state, postalcode, denomination, web_url } = this.state
+        const { name, description, mailing_one, mailing_two, city, state, postalcode, denomination, web_url } = this.state
         return (
-            <form id="addchurch" onSubmit={this.handleSubmit} method="POST" action="/churches/addchurch">           
+            <form id="addchurch" onSubmit={this.handleSubmit} >           
                 <h1 className="formtitle">Please Add Your Church!</h1>
+
                 <div>
                 <label htmlFor="name"><b>Enter Church Name</b></label>
-                <input type="text" placeholder="Church Name" name="name" value={churchname} required />
+                <input type="text" placeholder="Church Name" name="name" value={name} onChange={this.handleChange} required />
                 </div>
                 <div>
                 <label htmlFor="name"><b>Enter Description</b></label><br></br>
-                <textarea type="text" placeholder="Enter Description" name="description" value={description} onChange={this.handleChange} required></textarea>
+                <textarea type="text" placeholder="Enter Description" name="description" value={description} onChange={this.handleChange}></textarea>
                 </div>
                 <br></br>
                 <div>
@@ -58,7 +59,7 @@ class Addchurch extends React.Component {
                 </div>
                 <div>
                 <label htmlFor="name"><b>Mailing Address Two</b></label>
-                <input type="text" placeholder="Enter Mailing Address Two" name="mailing_two" value={mailing_two} onChange={this.handleChange} required />
+                <input type="text" placeholder="Enter Mailing Address Two" name="mailing_two" value={mailing_two} onChange={this.handleChange}/>
                 </div>
                 <div>
                 <label htmlFor="name"><b>City</b></label>
@@ -75,11 +76,11 @@ class Addchurch extends React.Component {
                 <br></br>
                 <div>
                 <label htmlFor="name"><b>Denomination</b></label>
-                <input type="text" placeholder="Enter Denomination" name="denomination" value={denomination} onChange={this.handleChange} required />
+                <input type="text" placeholder="Enter Denomination" name="denomination" value={denomination} onChange={this.handleChange}/>
                 </div>
                 <div>
                 <label htmlFor="name"><b>Web URL</b></label>
-                <input type="text" placeholder="Enter URL" name="web_url" value={web_url} onChange={this.handleChange} required />
+                <input type="text" placeholder="Enter URL" name="web_url" value={web_url} onChange={this.handleChange}/>
                 </div>
                 <div className="clearfix">
                     <button type="submit" className="signupbtn">Sign Up</button>
