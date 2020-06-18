@@ -33,7 +33,7 @@ class Login extends React.Component {
         const { username, password } = this.state
         return (            
             
-            <form id="login" onSubmit={this.handleSubmit} method="POST" action="/users/login">
+            <form id="login" onSubmit={this.handleSubmit} >
             <h1>Login Page!</h1>
             <div>
                 <label htmlFor="name"><b>Username</b></label>
