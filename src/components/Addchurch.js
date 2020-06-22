@@ -83,7 +83,7 @@ class Addchurch extends React.Component {
                 <input type="text" placeholder="Enter URL" name="web_url" value={web_url} onChange={this.handleChange}/>
                 </div>
                 <div className="clearfix">
-                    <button type="submit" className="signupbtn">Sign Up</button>
+                    <button type="submit" className="signupbtn" >Sign Up</button>
                 </div>
             </form>
         )

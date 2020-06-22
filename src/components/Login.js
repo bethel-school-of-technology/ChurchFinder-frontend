@@ -2,12 +2,13 @@ import React from 'react';
 import axios from 'axios';
 
 class Login extends React.Component {
+
     constructor(props) {
         super(props)
 
         this.state = {
             username: "",
-            password:""
+            password:"",
         };        
     }
 
@@ -28,6 +29,8 @@ class Login extends React.Component {
                 console.log(error)
             })
     }
+   
+
 
     render() {
         const { username, password } = this.state
@@ -44,7 +47,7 @@ class Login extends React.Component {
                 <input type="password" placeholder="Enter Password" name="password" value={password} onChange={this.handleChange} required></input>
             </div>
             <div className="clearfix">
-                <button type="submit" className="loginbtn">Login</button>
+                <button type="submit" className="loginbtn" >Login</button>
             </div>
             </form>
         )
