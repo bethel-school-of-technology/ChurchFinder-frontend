@@ -1,77 +1,84 @@
-import "mapbox-gl/dist/mapbox-gl.css"
-import "react-map-gl-geocoder/dist/mapbox-gl-geocoder.css"
-import React, { Component } from 'react'
-import MapGL from "react-map-gl";
-import DeckGL, { GeoJsonLayer } from "deck.gl";
-import Geocoder from "react-map-gl-geocoder";
+import React, { useState, useRef, useEffect } from 'react';
+import ReactMapGL, { Marker } from 'react-map-gl';
+import 'mapbox-gl/dist/mapbox-gl.css';
+import { listChurches } from '../components/Api';
 
+function Map() {
+  const [churches, setChurches] = useState([]);
+  const [viewport, setViewport] = useState({
+    latitude: 41.0799898,
+    longitude: -85.1386015,
+    width: '60vw',
+    height: '80vh',
+    zoom: 10    
+  });
 
-class Map extends Component {
-  state = { 
-    viewport :{
-      latitude: 41.07963180541992,
-      longitude: -85.13732147216797,
-      zoom: 10
-    },
-    searchResultLayer: null
-  }
+  const mapRef = useRef();
 
-  mapRef = React.createRef()
+  useEffect(() => {
+    (async() => {
+      const churches = await listChurches();
+      setChurches(churches);
+      console.log(churches);
+    })();  
+    
+    return() => {
+      // clean up things ...
+      // is like a componentUnmount()
+    };
+  }, []);
 
-  handleViewportChange = viewport => {
-    this.setState({
-      viewport: { ...this.state.viewport, ...viewport }
-    })
-  }
-  // if you are happy with Geocoder default settings, you can just use handleViewportChange directly
-  handleGeocoderViewportChange = viewport => {
-    const geocoderDefaultOverrides = { transitionDuration: 1000 };
+  return (
+    <div>
+      <ReactMapGL
+        className='mapContainer'
+        {...viewport}
+        mapStyle="mapbox://styles/mapbox/streets-v9"
+        maxZoom={20}
+        mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
+        onViewportChange={(newViewport) => {
+          setViewport({ ...newViewport });
+        }}
+        ref={mapRef}
+      >
+        {
 
-    return this.handleViewportChange({
-      ...viewport,
-      ...geocoderDefaultOverrides
-    });
-  };
+        churches.map(church => (
+          <Marker 
+            key={church.id}
+            latitude={41.0799898}
+            // {parseFloat(church.Latitude)}
+            longitude={-85.1386015}
+            // {parseFloat(church.Longitude)}
+            offsetLeft={-20}
+            offsetTop={-10}>
+            <div>
+              <h1>Church</h1>
+            <button className='marker-btn'>
+              <img src='/colorchurch.svg' alt='church' />
+            </button>
+          </div>  
 
-  handleOnResult = event => {
-    this.setState({
-      searchResultLayer: new GeoJsonLayer({
-        id: "search-result",
-        data: event.result.geometry,
-        getFillColor: [255, 0, 0, 128],
-        getRadius: 1000,
-        pointRadiusMinPixels: 10,
-        pointRadiusMaxPixels: 10
-      })
-    })
-  }
+          </Marker>
 
-    render(){
-      const { viewport, searchResultLayer} = this.state
-      return (
-        <div style={{ height: '100vh'}}>
-          {/* <h1 style={{textAlign: 'center', fontSize: '25px', fontWeight: 'bolder' }}>Use the search bar to find a location or click <a href="https://opendata.arcgis.com/datasets/51cd2ffaea2e4579aace5a1d4f0de71f_0.geojson">here</a> to find your location</h1> */}
-          <MapGL className="mapContainer"
-            ref={this.mapRef}
-            {...viewport}
-            mapStyle="mapbox://styles/mapbox/streets-v9"
-            width="50%"
-            height="70%"
-            onViewportChange={this.handleViewportChange}
-            mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-            >
-              <Geocoder 
-                mapRef={this.mapRef}
-                onResult={this.handleOnResult}
-                onViewportChange={this.handleGeocoderViewportChange}
-                mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-                position='top-left'
-              />
-            </MapGL>
-            <DeckGL {...viewport} layers={[searchResultLayer]} />
-        </div>
-      )
-    }
+        ))
+      }
+
+        {/* <Marker
+          latitude={41.07776110}
+          longitude={-85.14752470}
+        >
+          <div>
+            <button className='marker-btn'>
+              <img src='/colorchurch.svg' alt='church' />
+            </button>
+          </div>          
+        </Marker> */}
+
+      </ReactMapGL>
+    </div>
+
+  )
 }
 
 export default Map;

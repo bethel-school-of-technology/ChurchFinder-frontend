@@ -6,6 +6,8 @@ import Addchurch from './components/Addchurch';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+// import ChurchList from './components/churchlist';
+
 
 function App() { 
 
@@ -19,8 +21,13 @@ function App() {
           <Route path="/Signup" component={Signup} />
           <Route path="/Login" component={Login} />
         </Switch>
+        <div>
+        {/* <ChurchList></ChurchList> */}
+        </div>
       </div>
     </Router>
+
+   
 
 
   )
