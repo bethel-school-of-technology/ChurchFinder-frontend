@@ -16,7 +16,8 @@ class Addchurch extends React.Component {
             postalcode: "",
             denomination: "",
             web_url: "",
-            longitude:""
+            longitude:"",
+            latitude:""
         };
     }
 
