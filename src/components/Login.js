@@ -17,17 +17,12 @@ class Login extends React.Component {
         super(props)
 
         this.state = {
-<<<<<<< HEAD
-            username: "",
-            password:"",
-=======
             username: null,
             password: null,
             formErrors:{
                 username: "",
                 password: ""
             }
->>>>>>> c3cc8fd6bf3a341ca2a4a3f391ce4a9031d17619
         };        
     }
 
