@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -114,6 +114,7 @@ button:hover {
   .cancelbtn, .signupbtn {
     width: 100%;
   }
+<<<<<<< HEAD
 }
 
 
@@ -122,3 +123,6 @@ button:hover {
     padding: 60px 0;
   }
 }
+=======
+} 
+>>>>>>> c3cc8fd6bf3a341ca2a4a3f391ce4a9031d17619
