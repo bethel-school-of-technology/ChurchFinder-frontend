@@ -1,4 +1,8 @@
+<<<<<<< HEAD
  body {
+=======
+  body {
+>>>>>>> 8cac0e6dd88295558f33f84869c232beaae06d59
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -34,7 +38,7 @@ h1 {
     align-items: center;
     list-style: none;    
 }
-* {box-sizing: border-box}
+* {box-sizing: border-box} */
 
 /* Full-width input fields */
   input[type=text], input[type=password] {
@@ -101,6 +105,13 @@ button:hover {
   margin-top: 20px;
   margin-left: 700px;
 }
+
+
+  .Login form {
+    margin: 0 auto;
+    max-width: 320px;
+  }
+
 
 /* Change styles for cancel button and signup button on extra small screens */
 @media screen and (max-width: 300px) {

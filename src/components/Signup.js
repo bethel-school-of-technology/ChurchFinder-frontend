@@ -24,11 +24,11 @@ class Signup extends React.Component {
         super(props)
 
         this.state = {
-            firstname: null,
-            lastname: null,
-            email: null,
-            username: null,
-            password: null,
+            firstname: "",
+            lastname: "",
+            email: "",
+            username: "",
+            password: "",
             formErrors:{
                 firstname: "",
                 lastname: "",
@@ -39,26 +39,8 @@ class Signup extends React.Component {
         };
     }
 
-    handleSubmit = e => {
-        e.preventDefault()
-        axios.post("http://localhost:5000/users/login", this.state)
-
-        if (formValid(this.state)){
-            console.log(`
-            --SUBMITTING--
-                Firstname: ${this.state.firstname}
-                Lastname: ${this.state.lastname}
-                Email: ${this.state.email}
-                Username: ${this.state.username}
-                Password: ${this.state.password}
-            `);
-        } else {
-            console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
-        }
-    };
-
     handleChange = (e) => {
-        e.preventDefault();
+        this.setState({ [e.target.name ]: e.target.value })
         const { name, value } = e.target;
         let formErrors = this.state.formErrors;
 
@@ -86,12 +68,31 @@ class Signup extends React.Component {
             default:
             break;    
     }
-        this.setState({formErrors, [name]: value }, () => console.log(this.state) )
+    
+}     
+
+    handleSubmit = e => {
+        e.preventDefault()
+        console.log(this.state)
+        axios.post("http://localhost:5000/users/signup", this.state)
+            .then(response => {
+                console.log(response)
+                this.setState({
+                    result:response
+                });
+            })
+
+        if (formValid(this.state)){
+            console.log(this.state);           
+        } else {
+            console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
+        }
     };
 
 
     render() {
         const { formErrors } = this.state
+        const { firstname, lastname, email, username, password} = this.state
        
         return (
             <div className="wrapper">
@@ -106,6 +107,7 @@ class Signup extends React.Component {
                             type="text"
                             name="firstname"
                             noValidate
+                            value={firstname}
                             onChange={this.handleChange}
                             />
                             {formErrors.firstname.length > 0 && (
@@ -120,6 +122,7 @@ class Signup extends React.Component {
                             type="text"
                             name="lastname"
                             noValidate
+                            value={lastname}
                             onChange={this.handleChange}
                             />
                             {formErrors.lastname.length > 0 && (
@@ -134,6 +137,7 @@ class Signup extends React.Component {
                             type="text"
                             name="email"
                             noValidate
+                            value={email}
                             onChange={this.handleChange}
                             />
                             {formErrors.email.length > 0 && (
@@ -144,10 +148,11 @@ class Signup extends React.Component {
                             <label htmlFor="username">Username</label>
                             <input
                             className={formErrors.username.length > 0 ? "error" : null}
-                            placeholder="Userame"
+                            placeholder="Username"
                             type="text"
                             name="username"
                             noValidate
+                            value={username}
                             onChange={this.handleChange}
                             />
                             {formErrors.username.length > 0 && (
@@ -159,9 +164,10 @@ class Signup extends React.Component {
                             <input
                             className={formErrors.password.length > 0 ? "error" : null}
                             placeholder="Password"
-                            type="text"
+                            type="password"
                             name="password"
                             noValidate
+                            value={password}
                             onChange={this.handleChange}
                             />
                             {formErrors.password.length > 0 && (
@@ -173,9 +179,10 @@ class Signup extends React.Component {
                             <input
                             className={formErrors.password.length > 0 ? "error" : null}
                             placeholder="password"
-                            type="text"
+                            type="password"
                             name="password"
                             noValidate
+                            value={password}
                             onChange={this.handleChange}
                             />
                             {formErrors.password.length > 0 && (

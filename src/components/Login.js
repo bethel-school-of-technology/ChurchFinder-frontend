@@ -12,6 +12,7 @@ return valid;
 };
 
 class Login extends React.Component {
+
     constructor(props) {
         super(props)
 
@@ -59,6 +60,8 @@ class Login extends React.Component {
             console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
         };
     }
+   
+
 
     render() {
         const { username, password } = this.state
@@ -75,7 +78,7 @@ class Login extends React.Component {
                 <input type="password" placeholder="Enter Password" name="password" value={password} onChange={this.handleChange} required></input>
             </div>
             <div className="clearfix">
-                <button type="submit" className="loginbtn">Login</button>
+                <button type="submit" className="loginbtn" >Login</button>
             </div>
             </form>
         )

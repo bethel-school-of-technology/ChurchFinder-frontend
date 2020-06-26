@@ -15,7 +15,9 @@ class Addchurch extends React.Component {
             state: "",
             postalcode: "",
             denomination: "",
-            web_url: ""
+            web_url: "",
+            longitude:"",
+            latitude:""
         };
     }
 
@@ -39,7 +41,7 @@ class Addchurch extends React.Component {
     }
 
     render() {
-        const { name, description, mailing_one, mailing_two, city, state, postalcode, denomination, web_url } = this.state
+        const { name, description, mailing_one, mailing_two, city, state, postalcode, denomination, web_url, longitude, latitude } = this.state
         return (
             <form id="addchurch" onSubmit={this.handleSubmit} >           
                 <h1 className="formtitle">Please Add Your Church!</h1>
@@ -82,8 +84,16 @@ class Addchurch extends React.Component {
                 <label htmlFor="name"><b>Web URL</b></label>
                 <input type="text" placeholder="Enter URL" name="web_url" value={web_url} onChange={this.handleChange}/>
                 </div>
+                <div>
+                <label htmlFor="name"><b>Longitude</b></label>
+                <input type="number"  placeholder="Enter Longitude" name="longitude" value={longitude} onChange={this.handleChange}/>
+                </div>
+                <div>
+                <label htmlFor="name"><b>Latitude</b></label>
+                <input type="number"  placeholder="Enter Latitude" name="latitude" value={latitude} onChange={this.handleChange}/>
+                </div>
                 <div className="clearfix">
-                    <button type="submit" className="signupbtn">Sign Up</button>
+                    <button type="submit" className="signupbtn" >Sign Up</button>
                 </div>
             </form>
         )
