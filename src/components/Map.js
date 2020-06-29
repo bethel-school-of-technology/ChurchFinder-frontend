@@ -2,34 +2,40 @@ import React, { useState, useRef, useEffect } from 'react';
 import ReactMapGL, { Marker } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { listChurches } from '../components/Api';
+import "react-map-gl-geocoder/dist/mapbox-gl-geocoder.css"
+
+
+
+
 
 function Map() {
   const [churches, setChurches] = useState([]);
   const [viewport, setViewport] = useState({
-    latitude: 41.0799898,
-    longitude: -85.1386015,
+    longitude: -86.1746933,
+    latitude: 40.3270127,
     width: '60vw',
-    height: '80vh',
-    zoom: 10    
+    height: '70vh',
+    zoom: 6
   });
 
   const mapRef = useRef();
 
-  useEffect(() => {
-    (async() => {
+
+    useEffect(() => {
+    (async () => {
       const churches = await listChurches();
       setChurches(churches);
       console.log(churches);
-    })();  
-    
-    return() => {
+    })();
+
+    return () => {
       // clean up things ...
       // is like a componentUnmount()
     };
   }, []);
 
   return (
-    <div>
+    <div >
       <ReactMapGL
         className='mapContainer'
         {...viewport}
@@ -41,15 +47,17 @@ function Map() {
         }}
         ref={mapRef}
       >
-        {
+        
+        {/* {
 
         churches.map(church => (
           <Marker 
             key={church.id}
-            latitude={41.0799898}
-            // {parseFloat(church.Latitude)}
-            longitude={-85.1386015}
-            // {parseFloat(church.Longitude)}
+            // latitude={41.0799898}
+            longitude={parseFloat(church.Longitude)}
+            latitude={parseFloat(church.Latitude)}
+            // longitude={-85.1386015}
+            
             offsetLeft={-20}
             offsetTop={-10}>
             <div>
@@ -62,7 +70,7 @@ function Map() {
           </Marker>
 
         ))
-      }
+      } */}
 
         {/* <Marker
           latitude={41.07776110}
@@ -76,6 +84,7 @@ function Map() {
         </Marker> */}
 
       </ReactMapGL>
+
     </div>
 
   )

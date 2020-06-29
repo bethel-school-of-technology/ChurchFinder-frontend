@@ -10,7 +10,7 @@
 
 // callAPI() {
 //     fetch("http://localhost:5000/churches/churchlist")
-//         .then(res => res.text())
+//         .then(res => res.json())
 //         .then(res => this.setState({ apiResponse: res }))
 //         .catch(err => err);
 // }
