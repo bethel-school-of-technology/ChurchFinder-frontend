@@ -48,7 +48,7 @@ function Map() {
         ref={mapRef}
       >
         
-        {/* {
+        {
 
         churches.map(church => (
           <Marker 
@@ -70,7 +70,7 @@ function Map() {
           </Marker>
 
         ))
-      } */}
+      }
 
         {/* <Marker
           latitude={41.07776110}
