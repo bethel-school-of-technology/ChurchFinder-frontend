@@ -1,43 +1,44 @@
- body {
+
+body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  min-height: 10vh; 
-  background-color: grey;   
+  min-height: 10vh;
+  background-color: grey;
   color: white;
 }
 
 h1 {
-  font-size: 40px;  
+  font-size: 40px;
 }
-
-
 
 .nav-links {
-    width: 40%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    list-style: none;    
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
 }
-* {box-sizing: border-box} */
 
+* {
+  box-sizing: border-box
+}
+
+*/
 /* Full-width input fields */
-  input[type=text], input[type=password] {
+
+input[type=text], input[type=password] {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -57,6 +58,7 @@ hr {
 }
 
 /* Set a style for all buttons */
+
 button {
   background-color: #4CAF50;
   color: white;
@@ -69,27 +71,31 @@ button {
 }
 
 button:hover {
-  opacity:1;
+  opacity: 1;
 }
 
 /* Extra styles for the cancel button */
+
 .cancelbtn {
   padding: 14px 20px;
   background-color: #f44336;
 }
 
 /* Float cancel and signup buttons and add an equal width */
+
 .cancelbtn, .signupbtn {
   float: left;
   width: 50%;
 }
 
 /* Add padding to container elements */
+
 .container {
   padding: 16px;
 }
 
 /* Clear floats */
+
 .clearfix::after {
   content: "";
   clear: both;
@@ -102,16 +108,15 @@ button:hover {
   margin-left: 700px;
 }
 
-
-  .Login form {
-    margin: 0 auto;
-    max-width: 320px;
-  }
-
+.Login form {
+  margin: 0 auto;
+  max-width: 320px;
+}
 
 /* Change styles for cancel button and signup button on extra small screens */
+
 @media screen and (max-width: 300px) {
   /* .cancelbtn, .signupbtn {
     width: 100%; */
   }
-
+}
