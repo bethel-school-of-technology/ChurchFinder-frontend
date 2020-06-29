@@ -194,7 +194,7 @@ class Addchurch extends React.Component {
                             )}
                         </div>
                         <div className="city">
-                            <label htmlFor="city">Enter citye</label>
+                            <label htmlFor="city">Enter City</label>
                             <input
                             className={formErrors.city.length > 0 ? "error" : null} 
                             placeholder="city"
