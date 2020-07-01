@@ -61,6 +61,20 @@ function Map() {
           
           )}
 
+          <Marker
+          latitude={41.07662190}
+          longitude={-85.13339490}         
+          >
+            <div>
+                <button className='marker-btn'>
+                  <img src='/colorchurch.svg' alt='church' />
+                </button>
+            </div>
+
+
+
+          </Marker>
+
       </ReactMapGL>
     </div >
   )
