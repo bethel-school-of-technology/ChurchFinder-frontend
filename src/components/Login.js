@@ -1,16 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 
-const formValid = formErrors => {
-    let valid = true;
-
-    Object.values(formErrors).forEach(val => {
-        val.length > 0 && (valid = false);
-    });
-
-    return valid;
-};
-
 class Login extends React.Component {
 
     constructor(props) {
@@ -24,22 +14,6 @@ class Login extends React.Component {
 
     handleChange = (e) => {
         this.setState({ [e.target.name]: e.target.value })
-        const { name, value } = e.target;
-        let formErrors = this.state.formErrors;
-
-        switch (name) {
-            case 'username':
-                formErrors.username = value.length < 3 && value.length > 0 ? 'Minimum 3 characters required'
-                    : "";
-                break;
-            case 'password':
-                formErrors.password = value.length < 6 && value.length > 0 ? 'Minimum 6 characters required'
-                    : "";
-                break;
-            default:
-                break;
-        }
-        this.setState({ formErrors, [name]: value }, () => console.log(this.state))
     }
 
     handleSubmit = e => {
@@ -54,17 +28,9 @@ class Login extends React.Component {
 
             })
 
-        if (formValid(this.state)) {
-            console.log(this.state);
-        } else {
-            console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
-        };
     }
 
-
-
     render() {
-        const { formErrors } = this.state
         const { username, password } = this.state
         return (
 
