@@ -105,7 +105,18 @@ button:hover {
 .mapContainer {
   border: solid 2px black;
   margin-top: 20px;
-  margin-left: 700px;
+  margin-left: 20px;
+}
+
+.marker-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.marker-btn img {
+  width: 35px;
+  height: 35px;
 }
 
 .Login form {

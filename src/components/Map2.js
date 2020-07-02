@@ -2,31 +2,27 @@ import React, { useState, useRef, useEffect } from 'react';
 import ReactMapGL, { Marker } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { listChurches } from './Api';
-import "react-map-gl-geocoder/dist/mapbox-gl-geocoder.css"
-
-
-
-
+import "react-map-gl-geocoder/dist/mapbox-gl-geocoder.css";
 
 function Map() {
   const [churches, setChurches] = useState([]);
   const [viewport, setViewport] = useState({
-    longitude: -86.1746933,
-    latitude: 40.3270127,
-    width: '60vw',
+    longitude: -85.1386015,
+    latitude: 41.0799898,
+    width: '97vw',
     height: '70vh',
-    zoom: 6
+    zoom: 8
   });
 
   const mapRef = useRef();
 
 
-    useEffect(() => {
+  useEffect(() => {
     (async () => {
-      const churches = await listChurches();
-      setChurches(churches);
-      console.log(churches);
+      const churchList = await listChurches();
+      setChurches(churchList);
     })();
+    console.log(churches);
 
     return () => {
       // clean up things ...
@@ -36,6 +32,7 @@ function Map() {
 
   return (
     <div >
+
       <ReactMapGL
         className='mapContainer'
         {...viewport}
@@ -47,46 +44,30 @@ function Map() {
         }}
         ref={mapRef}
       >
-        
-        {
 
-        churches.map(church => (
-          <Marker 
-            key={church.id}
-            // latitude={41.0799898}
-            longitude={parseFloat(church.Longitude)}
-            latitude={parseFloat(church.Latitude)}
-            // longitude={-85.1386015}
+         {
+          churches.map(church =>
             
-            offsetLeft={-20}
-            offsetTop={-10}>
-            <div>
-              <h1>Church</h1>
-            <button className='marker-btn'>
-              <img src='/colorchurch.svg' alt='church' />
-            </button>
-          </div>  
+              <Marker
+                key={church.id}
+                longitude={parseFloat(church.Longitude)}
+                latitude={parseFloat(church.Latitude)}
+                offsetLeft={-20}
+                offsetTop={-10}
+                >
+                <div>
+                  <button className='marker-btn'>
+                    <img src='/colorchurch.svg' alt='church' />
+                  </button>
+                </div>
 
-          </Marker>
+              </Marker>
 
-        ))
-      }
-
-        {/* <Marker
-          latitude={41.07776110}
-          longitude={-85.14752470}
-        >
-          <div>
-            <button className='marker-btn'>
-              <img src='/colorchurch.svg' alt='church' />
-            </button>
-          </div>          
-        </Marker> */}
+            )
+        } 
 
       </ReactMapGL>
-
     </div>
-
   )
 }
 
