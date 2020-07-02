@@ -2,20 +2,16 @@ import React from 'react';
 import axios from 'axios';
 
 class Login extends React.Component {
-
     constructor(props) {
         super(props)
-
         this.state = {
             username: "",
             password: ""
         };
     }
-
     handleChange = (e) => {
         this.setState({ [e.target.name]: e.target.value })
     }
-
     handleSubmit = e => {
         e.preventDefault()
         console.log(this.state)
@@ -25,15 +21,11 @@ class Login extends React.Component {
                 this.setState({
                     result: response
                 });
-
             })
-
-    }
 
     render() {
         const { username, password } = this.state
         return (
-
             <form id="login" onSubmit={this.handleSubmit} >
                 <h1>Login Page!</h1>
                 <div>
