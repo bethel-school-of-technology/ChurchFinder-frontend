@@ -93,7 +93,7 @@ class Signup extends React.Component {
                     result:response
                 });
                 window.confirm("You have successfully signed up!")
-                this.props.history.push("/")
+                this.props.history.push("/Login")
             })
     };
 

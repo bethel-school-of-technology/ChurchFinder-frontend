@@ -122,7 +122,7 @@ handleSubmit = e => {
             window.confirm("You have successfully added your church!")
             this.props.history.push("/")
         })
-};
+}
 
     render () {
         const { formErrors } = this.state
