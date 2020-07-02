@@ -79,7 +79,7 @@ class Addchurch extends React.Component {
             : "";
             break;
             case 'state': 
-            formErrors.state = value.length < 3 ? 'Minimum 3 characters required' 
+            formErrors.state = value.length < 2 ? 'Minimum 2 characters required' 
             : "";
             break;
             case 'postalcode': 
@@ -274,7 +274,7 @@ class Addchurch extends React.Component {
                             <input
                             className={formErrors.longitude.length > 0 ? "error" : null} 
                             placeholder="longitude"
-                            type="text"
+                            type="number"
                             name="longitude"
                             noValidate
                             value={longitude}
@@ -289,7 +289,7 @@ class Addchurch extends React.Component {
                             <input
                             className={formErrors.latitude.length > 0 ? "error" : null} 
                             placeholder="latitude"
-                            type="text"
+                            type="number"
                             name="latitude"
                             noValidate
                             value={latitude}
