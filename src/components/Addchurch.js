@@ -1,8 +1,9 @@
 import React from 'react';
 import axios from 'axios';
+import {withRouter} from 'react-router-dom';
 
 
-  const formValid = ({ formErrors, ...rest }) => {
+const formValid = ({ formErrors, ...rest }) => {
     let valid = true;
 
     Object.values(formErrors).forEach(val => {
@@ -16,8 +17,6 @@ import axios from 'axios';
 
 return valid;
 };
-
-
 
 class Addchurch extends React.Component {
     constructor(props) {
@@ -47,8 +46,7 @@ class Addchurch extends React.Component {
                 web_url: "",
                 longitude:"",
                 latitude:""
-
-            }
+             }
         };
     }
 
@@ -107,22 +105,24 @@ class Addchurch extends React.Component {
     }
 }
 
-    handleSubmit = e => {
-        e.preventDefault()
-        console.log(this.state)
-        axios.post("http://localhost:5000/churches/addchurch", this.state)
-            .then(response => {
-                console.log(response)
-                this.setState({
-                    result:response
-                });
-            })
-            if (formValid(this.state)){
-                console.log(this.state);           
-            } else {
-                console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
-            }
-        };
+handleSubmit = e => {
+    e.preventDefault()
+    console.log(this.state)
+    if (formValid(this.state)){
+        console.log(this.state);           
+    } else {
+        console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
+    }
+    axios.post("http://localhost:5000/users/addchurch", this.state)
+        .then(response => {
+            console.log(response)
+            this.setState({
+                result:response
+            });
+            window.confirm("You have successfully added your church!")
+            this.props.history.push("/")
+        })
+};
 
     render () {
         const { formErrors } = this.state
@@ -310,4 +310,4 @@ class Addchurch extends React.Component {
  }
 
 
-export default Addchurch;
+ export default withRouter(Addchurch);
