@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import {withRouter} from 'react-router-dom';
 
 const emailRegex = RegExp(
     /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
@@ -29,12 +30,14 @@ class Signup extends React.Component {
             email: "",
             username: "",
             password: "",
+            confirmpassword: "",
             formErrors:{
                 firstname: "",
                 lastname: "",
                 email: "",
                 username: "",
-                password: ""
+                password: "",
+                confirmpassword: ""
             }
         };
     }
@@ -65,6 +68,10 @@ class Signup extends React.Component {
             formErrors.password = value.length < 6 ? 'Minimum 6 characters required' 
             : "";
             break;
+            case 'confirmpassword': 
+            formErrors.confirmpassword = value.length < 6 ? 'Minimum 6 characters required' 
+            : "";
+            break;
             default:
             break;    
     }
@@ -74,25 +81,26 @@ class Signup extends React.Component {
     handleSubmit = e => {
         e.preventDefault()
         console.log(this.state)
+        if (formValid(this.state)){
+            console.log(this.state);           
+        } else {
+            console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
+        }
         axios.post("http://localhost:5000/users/signup", this.state)
             .then(response => {
                 console.log(response)
                 this.setState({
                     result:response
                 });
+                window.confirm("You have successfully signed up!")
+                this.props.history.push("/")
             })
-
-        if (formValid(this.state)){
-            console.log(this.state);           
-        } else {
-            console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
-        }
     };
 
 
     render() {
         const { formErrors } = this.state
-        const { firstname, lastname, email, username, password} = this.state
+        const { firstname, lastname, email, username, password, confirmpassword} = this.state
        
         return (
             <div className="wrapper">
@@ -174,19 +182,19 @@ class Signup extends React.Component {
                                 <span className="errorMessage">{formErrors.password}</span>
                             )}
                         </div>
-                        <div className="password">
-                            <label htmlFor="password">Repeat Password</label>
+                        <div className="password2">
+                            <label htmlFor="password">Confirm Password</label>
                             <input
-                            className={formErrors.password.length > 0 ? "error" : null}
-                            placeholder="password"
+                            className={formErrors.confirmpassword.length > 0 ? "error" : null}
+                            placeholder="Password"
                             type="password"
-                            name="password"
+                            name="confirmpassword"
                             noValidate
-                            value={password}
+                            value={confirmpassword}
                             onChange={this.handleChange}
                             />
-                            {formErrors.password.length > 0 && (
-                                <span className="errorMessage">{formErrors.password}</span>
+                            {formErrors.confirmpassword.length > 0 && (
+                                <span className="errorMessage">{formErrors.confirmpassword}</span>
                             )}
                         </div>
                         <div className="createAccount">
@@ -200,4 +208,4 @@ class Signup extends React.Component {
 
 }
 
-export default Signup;
+export default withRouter(Signup);
