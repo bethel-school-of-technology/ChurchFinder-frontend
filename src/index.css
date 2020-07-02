@@ -119,6 +119,17 @@ button:hover {
   height: 35px;
 }
 
+.marker-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.marker-btn img {
+  width: 20px;
+  height: 20px;
+}
+
 .Login form {
   margin: 0 auto;
   max-width: 320px;

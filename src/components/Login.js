@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 class Login extends React.Component {
+
     constructor(props) {
         super(props)
 
@@ -17,6 +18,7 @@ class Login extends React.Component {
 
     handleSubmit = e => {
         e.preventDefault()
+        console.log(this.state)
         axios.post("http://localhost:5000/users/login", this.state)
             .then(response => {
                 console.log(response)
@@ -25,9 +27,7 @@ class Login extends React.Component {
                 });
 
             })
-            .catch(error => {
-                console.log(error)
-            })
+
     }
 
     render() {

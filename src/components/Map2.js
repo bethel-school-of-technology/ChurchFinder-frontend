@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import ReactMapGL, { Marker } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { listChurches } from './Api';
-import "react-map-gl-geocoder/dist/mapbox-gl-geocoder.css";
+import "react-map-gl-geocoder/dist/mapbox-gl-geocoder.css"
 
 function Map() {
   const [churches, setChurches] = useState([]);
@@ -13,9 +13,7 @@ function Map() {
     height: '70vh',
     zoom: 8
   });
-
   const mapRef = useRef();
-
 
   useEffect(() => {
     (async () => {
@@ -70,5 +68,4 @@ function Map() {
     </div>
   )
 }
-
 export default Map;
