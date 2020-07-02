@@ -113,7 +113,7 @@ handleSubmit = e => {
     } else {
         console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
     }
-    axios.post("http://localhost:5000/users/addchurch", this.state)
+    axios.post("http://localhost:5000/churches/addchurch", this.state)
         .then(response => {
             console.log(response)
             this.setState({
