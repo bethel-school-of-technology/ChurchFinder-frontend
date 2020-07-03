@@ -163,10 +163,11 @@ button:hover {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   background-color: gray;
   padding: 5px;
+  border-radius: 5px;
 }
 
 .church-links {
-  color: black;
+  color: rgb(1, 5, 248);
 }
 
 .Login form {

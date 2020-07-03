@@ -64,7 +64,7 @@ function Map() {
                     setSelectedChurch(church);
                   }}
                 >
-                  <img src='https://www.transparentpng.com/thumb/church/xdVh1R-church-free.png' alt='Church Clipart Photos' />
+                  <img src='/church-pin.svg' alt='Church Clipart Photos' />
                 </button>
               </div>
             </Marker>
