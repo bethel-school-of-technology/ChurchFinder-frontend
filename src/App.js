@@ -6,6 +6,7 @@ import Addchurch from './components/Addchurch';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Findchurch from './screens/Findchurch';
 
 
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="/Addchurch" component={Addchurch} />
           <Route path="/Signup" component={Signup} />
           <Route path="/Login" component={Login} />
+          <Route path="/FindChurch" component={Findchurch} />
         </Switch>
         <div>
         
