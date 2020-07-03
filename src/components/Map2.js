@@ -75,6 +75,7 @@ function Map() {
 
         {selectedChurch ? (
           <Popup
+            className='popup'
             latitude={parseFloat(selectedChurch.Latitude)}
             longitude={parseFloat(selectedChurch.Longitude)}
 
@@ -85,9 +86,11 @@ function Map() {
           >
 
             {/* Using a simple redirect to close the popup window.  Looking for a smoother way to do so. */}
-            <button className='close-popup'
-              onClick={e => window.location.href = '/'}
-            >x</button>
+            <div className='close-popup-btn'>
+              <button className='close-popup'
+                onClick={e => window.location.href = '/'}
+              >x</button>
+            </div>
             <div>
               <ul className='marker-popup'>
                 <li>
@@ -101,7 +104,7 @@ function Map() {
                   </h4>
                 </li>
                 <li>
-                  <a href={selectedChurch.Web_URL} target='_blank'>{selectedChurch.Web_URL}</a>
+                  <a className='church-links' href={selectedChurch.Web_URL} target='_blank'>{selectedChurch.Web_URL}</a>
                 </li>
               </ul>
 
