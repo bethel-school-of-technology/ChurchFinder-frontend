@@ -57,7 +57,7 @@ function Map() {
                 >
                 <div>
                   <button className='marker-btn'>
-                    <img src='/colorchurch.svg' alt='church' />
+                    <img src='/church-pin.svg' alt='church' />
                   </button>
                 </div>
 
