@@ -104,7 +104,7 @@ button:hover {
 
 .mapContainer {
   border: solid 2px black;
-  margin-top: 20px;
+  /* margin-top: 20px; */
   margin-left: 20px;
 }
 
@@ -126,8 +126,21 @@ button:hover {
 }
 
 .marker-btn img {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
+}
+
+.marker-popup {
+  list-style-type: none;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.close-popup {  
+  background: none;
+  color: black;
+  width: 10%;
+  margin-left: 300px;
+  
 }
 
 .Login form {
