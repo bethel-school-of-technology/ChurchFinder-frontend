@@ -64,13 +64,6 @@ function Map() {
                     setSelectedChurch(church);
                   }}
                 >
-<<<<<<< HEAD
-                <div>
-                  <button className='marker-btn'>
-                    <img src='/church-pin.svg' alt='church' />
-                  </button>
-                </div>
-=======
                   <img src='https://www.transparentpng.com/thumb/church/xdVh1R-church-free.png' alt='Church Clipart Photos' />
                 </button>
               </div>
@@ -111,7 +104,6 @@ function Map() {
                   <a href={selectedChurch.Web_URL} target='_blank'>{selectedChurch.Web_URL}</a>
                 </li>
               </ul>
->>>>>>> d37e1a6312d803e4aa5144fa860e3cd361c458b9
 
             </div>
           </Popup>
