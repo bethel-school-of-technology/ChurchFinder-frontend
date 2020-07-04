@@ -39,6 +39,11 @@ h1 {
   list-style: none;
 }
 
+.nav-icons {
+  width: 20px;
+  height: auto;
+}
+
 .routelink {
   text-decoration: none;
   color: black;
@@ -59,10 +64,11 @@ h1 {
   height: auto;
 }
 
+/* Needs to be made responsive */
 .home-text {
   position: absolute;
-  bottom: 350px;
-  right: 150px;
+  bottom: 43%;
+  right: 10%;
 }
 .home-text h1 {
   color: black;
@@ -79,7 +85,7 @@ input[type=text], input[type=password] {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
-  display: inline-block;
+  display: block;
   border: none;
   background: #f1f1f1;
 }

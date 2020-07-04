@@ -9,16 +9,16 @@ function Nav() {
             <h1>Church Finder</h1>
             <ul className='nav-links'>
                 <Link className='routelink' to='/'>
-                    <li>Home</li>
+                    <li><img className='nav-icons' src='home.png' alt='home-icon'></img> Home</li>
+                </Link>
+                <Link className='routelink' to='/signup'>                          
+                    <li><img className='nav-icons' src='adduser.svg' alt='add-user-icon'></img> Sign Up</li>
                 </Link>
                 <Link className='routelink' to='/login'>
-                    <li>Login</li>
-                </Link>
-                <Link className='routelink' to='/signup'>
-                    <li>Sign Up</li>
+                    <li><img className='nav-icons' src='login.svg' alt='login-icon'></img> Login</li>
                 </Link>
                 <Link className='routelink' to='addchurch'>
-                    <li>Add Church</li>
+                    <li><img className='nav-icons' src='add.svg' alt='add-church-icon'></img> Add Church</li>
                 </Link>
             </ul>
         </nav>
