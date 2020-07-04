@@ -88,7 +88,7 @@ function Map() {
             {/* Using a simple redirect to close the popup window.  Looking for a smoother way to do so. */}
             <div className='close-popup-btn'>
               <button className='close-popup'
-                onClick={e => window.location.href = '/'}
+                onClick={e => window.location.href = '/Findchurch'}
               >x</button>
             </div>
             <div>
