@@ -103,8 +103,10 @@ class Signup extends React.Component {
         const { firstname, lastname, email, username, password, confirmpassword} = this.state
        
         return (
+            <div id='background-container'>
+            <img id='home-background-img' src='background.jpg' alt='homepage-background'></img>
             <div className="wrapper">
-                <div className="form-wrapper">
+                <div className="form-wrapper" class="container">
                     <h1>Create Account</h1>
                     <form onSubmit={this.handleSubmit} noValidate>
                         <div className="firstname">
@@ -202,6 +204,7 @@ class Signup extends React.Component {
                   </div>
                 </form>
             </div>
+        </div>
         </div>
         );
      }

@@ -30,8 +30,10 @@ class Login extends React.Component {
         render() {
             const { username, password } = this.state
             return (
-                <form id="login" onSubmit={this.handleSubmit} >
-                    <h1>Login Page!</h1>
+                <div id='background-container'>
+                <img id='home-background-img' src='background.jpg' alt='homepage-background'></img>
+                <form id="login" onSubmit={this.handleSubmit} class="container" >
+                    <h1>Login Page</h1>
                     <div>
                         <label htmlFor="name"><b>Username</b></label>
                         <input type="text" placeholder="Enter Username" name="username" value={username} onChange={this.handleChange} required></input>
@@ -44,6 +46,7 @@ class Login extends React.Component {
                         <button type="submit" className="loginbtn">Login</button>
                     </div>
                 </form>
+                </div>
             )
         };
     }

@@ -129,7 +129,9 @@ handleSubmit = e => {
         const { name, description, mailing_one, mailing_two, city, state, postalcode, denomination, web_url, longitude, latitude } = this.state
         
         return (
-            <div className="wrapper">
+            <div id='background-container'>
+            <img id='home-background-img' src='background.jpg' alt='homepage-background'></img>
+            <div className="wrapper" class="container">
                 <div className="form-wrapper">
                     <h1>Add Church</h1>
                     <form onSubmit={this.handleSubmit} noValidate>
@@ -304,6 +306,7 @@ handleSubmit = e => {
                   </div>
                 </form>
             </div>
+        </div>
         </div>
         );
      }
