@@ -1,80 +1,120 @@
-import "mapbox-gl/dist/mapbox-gl.css"
-import "react-map-gl-geocoder/dist/mapbox-gl-geocoder.css"
-import React from 'react'
-import MapGL from "react-map-gl";
-import DeckGL, { GeoJsonLayer } from "deck.gl";
-import Geocoder from "react-map-gl-geocoder";
+import React, { useState, useRef, useEffect } from 'react';
+import ReactMapGL, { Marker, Popup } from 'react-map-gl';
+import 'mapbox-gl/dist/mapbox-gl.css';
+import { listChurches } from './Api';
+import "react-map-gl-geocoder/dist/mapbox-gl-geocoder.css";
 
-class Map extends React.Component { 
+function Map() {
+  const [selectedChurch, setSelectedChurch] = useState(null);
+  const [churches, setChurches] = useState([]);
+  const [viewport, setViewport] = useState({
+    longitude: -85.1386015,
+    latitude: 41.0799898,
+    width: '97vw',
+    height: '70vh',
+    zoom: 11
+  });
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      viewport: {
-        latitude: 41.07963180541992,
-        longitude: -85.13732147216797,
-        zoom: 10
-      },
-      searchResultLayer: null
-    }
-  }
-
-  mapRef = React.createRef()
-
-  handleViewportChange = viewport => {
-    this.setState({
-      viewport: { ...this.state.viewport, ...viewport }
-    })
-  }
-  // if you are happy with Geocoder default settings, you can just use handleViewportChange directly
-  handleGeocoderViewportChange = viewport => {
-    const geocoderDefaultOverrides = { transitionDuration: 1000 };
-
-    return this.handleViewportChange({
-      ...viewport,
-      ...geocoderDefaultOverrides
-    });
-  };
+  const mapRef = useRef();
 
 
-  handleOnResult = event => {
-    this.setState({
-      searchResultLayer: new GeoJsonLayer({
-        id: "search-result",
-        data: event.result.geometry,
-        getFillColor: [255, 0, 0, 128],
-        getRadius: 1000,
-        pointRadiusMinPixels: 10,
-        pointRadiusMaxPixels: 10,
-      })      
-    })
-  }
+  useEffect(() => {
+    (async () => {
+      const churchList = await listChurches();
+      setChurches(churchList);
+    })();
+    console.log(churches);
 
-  render() {
-    const { viewport, searchResultLayer } = this.state
-    return (
-      <div style={{ height: '100vh' }}>
-        <MapGL className="mapContainer"
-          ref={this.mapRef}
-          {...viewport}
-          mapStyle="mapbox://styles/mapbox/streets-v9"
-          width="50%"
-          height="70%"
-          onViewportChange={this.handleViewportChange}
-          mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-        >
-          <Geocoder
-            mapRef={this.mapRef}
-            onResult={this.handleOnResult}
-            onViewportChange={this.handleGeocoderViewportChange}
-            mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-            position='top-left'
-          />
-        </MapGL>
-        <DeckGL {...viewport} layers={[searchResultLayer]} />
-      </div>
-    )
-  }
+    return () => {
+      // clean up things ...
+      // is like a componentUnmount()
+    };
+  }, []);
+
+  return (
+    <div >
+
+      <ReactMapGL
+        className='mapContainer'
+        {...viewport}
+        mapStyle="mapbox://styles/mapbox/streets-v9"
+        maxZoom={20}
+        mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
+        onViewportChange={(newViewport) => {
+          setViewport({ ...newViewport });
+        }}
+        ref={mapRef}
+      >
+        {
+          churches.map(church =>
+
+            <Marker
+              key={church.id}
+              longitude={parseFloat(church.Longitude)}
+              latitude={parseFloat(church.Latitude)}
+              offsetLeft={-20}
+              offsetTop={-10}
+            >
+              <div>
+                <button
+                  className='marker-btn'
+                  onClick={e => {
+                    e.preventDefault();
+                    setSelectedChurch(church);
+                  }}
+                >
+                  <img src='/church-pin.svg' alt='Church Clipart Photos' />
+                </button>
+              </div>
+            </Marker>
+          )
+        }
+
+        {/* ternary operator - if it is the selectedChurch then show Popup.  If not null.*/}
+
+        {selectedChurch ? (
+          <Popup
+            className='popup'
+            latitude={parseFloat(selectedChurch.Latitude)}
+            longitude={parseFloat(selectedChurch.Longitude)}
+
+          // In the video they use an onClose function to close Popup window but it wont allow web_URL to be clicked on
+          // onClose ={() => {
+          //   setSelectedChurch(null);
+          // }}
+          >
+
+            {/* Using a simple redirect to close the popup window.  Looking for a smoother way to do so. */}
+            <div className='close-popup-btn'>
+              <button className='close-popup'
+                onClick={e => window.location.href = '/Findchurch'}
+              >x</button>
+            </div>
+            <div>
+              <ul className='marker-popup'>
+                <li>
+                  <h2>{selectedChurch.Name}</h2>
+                </li>
+                <li>
+                  <h4>
+                    {selectedChurch.Mailing_One}<br></br>
+                    {selectedChurch.Mailing_Two}<br></br>
+                    {selectedChurch.City}, {selectedChurch.State} {selectedChurch.PostalCode}
+                  </h4>
+                </li>
+                <li>
+                  <a className='church-links' href={selectedChurch.Web_URL} target='_blank'>{selectedChurch.Web_URL}</a>
+                </li>
+              </ul>
+
+            </div>
+          </Popup>
+
+        ) : null}
+
+      </ReactMapGL>
+    </div>
+  )
 }
 
 export default Map;

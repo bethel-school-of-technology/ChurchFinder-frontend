@@ -1,9 +1,9 @@
 import React from 'react';
-import Map2 from '../components/Map2';
+import Map from '../components/Map';
 
 const Findchurch = () => (
     <div>
-        <Map2 />
+        <Map />
     </div>
 );
 
