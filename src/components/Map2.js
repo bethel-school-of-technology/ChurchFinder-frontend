@@ -45,7 +45,6 @@ function Map() {
         }}
         ref={mapRef}
       >
-
         {
           churches.map(church =>
 

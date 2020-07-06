@@ -120,7 +120,7 @@ handleSubmit = e => {
                 result:response
             });
             window.confirm("You have successfully added your church!")
-            this.props.history.push("/")
+            this.props.history.push("/Findchurch")
         })
 }
 
