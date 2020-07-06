@@ -144,10 +144,12 @@ button:active {
   position: absolute;
   right: 0;
   margin: 20px;
-  max-width: 300px;
+  max-width: 600px;
   padding: 16px;
   background-color: white;
   padding: 16px;
+  text-align: center;
+  line-height: 1.8;
 }
 
 /* Clear floats */
@@ -246,4 +248,4 @@ button:active {
       max-width: 320px;
     }
   }
-
+ 

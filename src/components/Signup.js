@@ -110,7 +110,7 @@ class Signup extends React.Component {
                     <h1>Create Account</h1>
                     <form onSubmit={this.handleSubmit} noValidate>
                         <div className="firstname">
-                            <label htmlFor="firstname">First Name</label>
+                            <label htmlFor="firstname"><b>First Name</b></label>
                             <input
                             className={formErrors.firstname.length > 0 ? "error" : null} 
                             placeholder="First Name"
@@ -125,7 +125,7 @@ class Signup extends React.Component {
                             )}
                         </div>
                         <div className="lastname">
-                            <label htmlFor="lastname">Last Name</label>
+                            <label htmlFor="lastname"><b>Last Name</b></label>
                             <input
                             className={formErrors.lastname.length > 0 ? "error" : null}
                             placeholder="Last Name"
@@ -140,7 +140,7 @@ class Signup extends React.Component {
                             )}
                         </div>
                         <div className="email">
-                            <label htmlFor="email">Email</label>
+                            <label htmlFor="email"><b>Email</b></label>
                             <input
                             className={formErrors.email.length > 0 ? "error" : null}
                             placeholder="Email"
@@ -155,7 +155,7 @@ class Signup extends React.Component {
                             )}
                         </div>
                         <div className="username">
-                            <label htmlFor="username">Username</label>
+                            <label htmlFor="username"><b>Username</b></label>
                             <input
                             className={formErrors.username.length > 0 ? "error" : null}
                             placeholder="Username"
@@ -170,7 +170,7 @@ class Signup extends React.Component {
                             )}
                         </div>
                         <div className="password">
-                            <label htmlFor="password">Password</label>
+                            <label htmlFor="password"><b>Password</b></label>
                             <input
                             className={formErrors.password.length > 0 ? "error" : null}
                             placeholder="Password"
@@ -185,7 +185,7 @@ class Signup extends React.Component {
                             )}
                         </div>
                         <div className="password2">
-                            <label htmlFor="password">Confirm Password</label>
+                            <label htmlFor="password"><b>Confirm Password</b></label>
                             <input
                             className={formErrors.confirmpassword.length > 0 ? "error" : null}
                             placeholder="Password"
