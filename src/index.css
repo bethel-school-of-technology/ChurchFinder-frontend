@@ -21,15 +21,19 @@ nav {
 .logo {
   width: 100px;
   height: auto;
-
 }
 
 
 h1 {
   font-size: 40px;
   color: seagreen;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   margin-right: 220px;
+}
+
+h2 {
+  color: seagreen;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .nav-links {
@@ -79,6 +83,7 @@ h1 {
 }
 
 */
+
 /* Full-width input fields */
 
 input[type=text], input[type=password] {

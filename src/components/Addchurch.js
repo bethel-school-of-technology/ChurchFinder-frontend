@@ -133,10 +133,11 @@ handleSubmit = e => {
             <img id='home-background-img' src='background.jpg' alt='homepage-background'></img>
             <div className="wrapper" class="container">
                 <div className="form-wrapper">
-                    <h1>Add Church</h1>
                     <form onSubmit={this.handleSubmit} noValidate>
+                        <fieldset>
+                            <legend> <h2>Add Your Church</h2> </legend>
                     <div className="name">
-                        <label htmlFor="name"><b>Church Name</b></label>
+                        <label htmlFor="name"><b> Church Name: </b></label>
                         <input
                         className={formErrors.name.length > 0 ? "error" : null} 
                         placeholder="Church Name"
@@ -151,10 +152,10 @@ handleSubmit = e => {
                         )}
                     </div>
                         <div className="description">
-                            <label htmlFor="description"><b>Enter Church Description</b></label>
+                            <label htmlFor="description"><b> Church Description: </b></label>
                             <input
                             className={formErrors.description.length > 0 ? "error" : null} 
-                            placeholder="description"
+                            placeholder="Description"
                             type="text"
                             name="description"
                             noValidate
@@ -166,10 +167,10 @@ handleSubmit = e => {
                         </div>
                 <br></br>
                 <div className="mailing_one">
-                            <label htmlFor="mailing_one"><b>Enter Address</b></label>
+                            <label htmlFor="mailing_one"><b> Mailing Address One: </b></label>
                             <input
                             className={formErrors.mailing_one.length > 0 ? "error" : null} 
-                            placeholder="Address One"
+                            placeholder="Mailing Address One"
                             type="text"
                             name="mailing_one"
                             noValidate
@@ -181,10 +182,10 @@ handleSubmit = e => {
                             )}
                         </div>
                         <div className="mailing_two">
-                            <label htmlFor="mailing_two"><b>Enter Address Two</b></label>
+                            <label htmlFor="mailing_two"><b>Mailing Address Two: </b></label>
                             <input
                             className={formErrors.mailing_two.length > 0 ? "error" : null} 
-                            placeholder="Address Two"
+                            placeholder="Mailing Address Two"
                             type="text"
                             name="mailing_two"
                             noValidate
@@ -196,10 +197,10 @@ handleSubmit = e => {
                             )}
                         </div>
                         <div className="city">
-                            <label htmlFor="city"><b>Enter City</b></label>
+                            <label htmlFor="city"><b> City: </b></label>
                             <input
                             className={formErrors.city.length > 0 ? "error" : null} 
-                            placeholder="city"
+                            placeholder="City"
                             type="text"
                             name="city"
                             noValidate
@@ -211,7 +212,7 @@ handleSubmit = e => {
                             )}
                         </div>
                         <div className="state">
-                            <label htmlFor="state"><b>Enter State</b></label>
+                            <label htmlFor="State"><b> State: </b></label>
                             <input
                             className={formErrors.state.length > 0 ? "error" : null} 
                             placeholder="state"
@@ -226,10 +227,10 @@ handleSubmit = e => {
                             )}
                         </div>
                         <div className="postalcode">
-                            <label htmlFor="postalcode"><b>Enter Zipcode</b></label>
+                            <label htmlFor="postalcode"><b> Postalcode: </b></label>
                             <input
                             className={formErrors.postalcode.length > 0 ? "error" : null} 
-                            placeholder="postalcode"
+                            placeholder="Postalcode"
                             type="number"
                             name="postalcode"
                             noValidate
@@ -242,10 +243,10 @@ handleSubmit = e => {
                         </div>
                 <br></br>
                         <div className="denomination">
-                            <label htmlFor="denomination"><b>Enter Denomination</b></label>
+                            <label htmlFor="denomination"><b> Denomination: </b></label>
                             <input
                             className={formErrors.denomination.length > 0 ? "error" : null} 
-                            placeholder="denomination"
+                            placeholder="Denomination"
                             type="text"
                             name="denomination"
                             noValidate
@@ -257,10 +258,10 @@ handleSubmit = e => {
                             )}
                         </div>
                         <div className="web_url">
-                            <label htmlFor="web_url"><b>Enter Web URL</b></label>
+                            <label htmlFor="web_url"><b> Web URL: </b></label>
                             <input
                             className={formErrors.web_url.length > 0 ? "error" : null} 
-                            placeholder="web_url"
+                            placeholder="Web_url"
                             type="text"
                             name="web_url"
                             noValidate
@@ -272,10 +273,10 @@ handleSubmit = e => {
                             )}
                         </div>
                         <div className="longitude">
-                            <label htmlFor="longitude"><b>Enter Church Longitude</b></label>
+                            <label htmlFor="longitude"><b> Longitude: </b></label>
                             <input
                             className={formErrors.longitude.length > 0 ? "error" : null} 
-                            placeholder="longitude"
+                            placeholder="Longitude"
                             type="number"
                             name="longitude"
                             noValidate
@@ -287,10 +288,10 @@ handleSubmit = e => {
                             )}
                         </div>
                         <div className="latitude">
-                            <label htmlFor="latitude"><b>Enter Church Latitude</b></label>
+                            <label htmlFor="latitude"><b> Latitude: </b></label>
                             <input
                             className={formErrors.latitude.length > 0 ? "error" : null} 
-                            placeholder="latitude"
+                            placeholder="Latitude"
                             type="number"
                             name="latitude"
                             noValidate
@@ -304,6 +305,7 @@ handleSubmit = e => {
                         <div className="createAccount">
                     <button type="submit">Add Church</button>
                   </div>
+                  </fieldset>
                 </form>
             </div>
         </div>

@@ -107,10 +107,11 @@ class Signup extends React.Component {
             <img id='home-background-img' src='background.jpg' alt='homepage-background'></img>
             <div className="wrapper">
                 <div className="form-wrapper" class="container">
-                    <h1>Create Account</h1>
                     <form onSubmit={this.handleSubmit} noValidate>
+                        <fieldset>
+                            <legend> <h2>CREATE ACCOUNT</h2> </legend>                            
                         <div className="firstname">
-                            <label htmlFor="firstname"><b>First Name</b></label>
+                            <label htmlFor="firstname"><b>First Name: </b></label>
                             <input
                             className={formErrors.firstname.length > 0 ? "error" : null} 
                             placeholder="First Name"
@@ -125,7 +126,7 @@ class Signup extends React.Component {
                             )}
                         </div>
                         <div className="lastname">
-                            <label htmlFor="lastname"><b>Last Name</b></label>
+                            <label htmlFor="lastname"><b>Last Name: </b></label>
                             <input
                             className={formErrors.lastname.length > 0 ? "error" : null}
                             placeholder="Last Name"
@@ -140,7 +141,7 @@ class Signup extends React.Component {
                             )}
                         </div>
                         <div className="email">
-                            <label htmlFor="email"><b>Email</b></label>
+                            <label htmlFor="email"><b>Email: </b></label>
                             <input
                             className={formErrors.email.length > 0 ? "error" : null}
                             placeholder="Email"
@@ -155,7 +156,7 @@ class Signup extends React.Component {
                             )}
                         </div>
                         <div className="username">
-                            <label htmlFor="username"><b>Username</b></label>
+                            <label htmlFor="username"><b>Username: </b></label>
                             <input
                             className={formErrors.username.length > 0 ? "error" : null}
                             placeholder="Username"
@@ -170,7 +171,7 @@ class Signup extends React.Component {
                             )}
                         </div>
                         <div className="password">
-                            <label htmlFor="password"><b>Password</b></label>
+                            <label htmlFor="password"><b>Password: </b></label>
                             <input
                             className={formErrors.password.length > 0 ? "error" : null}
                             placeholder="Password"
@@ -185,7 +186,7 @@ class Signup extends React.Component {
                             )}
                         </div>
                         <div className="password2">
-                            <label htmlFor="password"><b>Confirm Password</b></label>
+                            <label htmlFor="password"><b>Confirm Password: </b></label>
                             <input
                             className={formErrors.confirmpassword.length > 0 ? "error" : null}
                             placeholder="Password"
@@ -202,6 +203,7 @@ class Signup extends React.Component {
                         <div className="createAccount">
                     <button type="submit">Sign Up</button>
                   </div>
+                  </fieldset>
                 </form>
             </div>
         </div>
