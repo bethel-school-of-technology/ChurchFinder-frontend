@@ -135,7 +135,7 @@ handleSubmit = e => {
                 <div className="form-wrapper">
                     <form onSubmit={this.handleSubmit} noValidate>
                         <fieldset>
-                            <legend> <h2>Add Your Church</h2> </legend>
+                            <legend> <h2>ADD YOUR CHURCH</h2> </legend>
                     <div className="name">
                         <label htmlFor="name"><b> Church Name: </b></label>
                         <input
