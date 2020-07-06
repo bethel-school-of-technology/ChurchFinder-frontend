@@ -141,6 +141,12 @@ button:active {
 /* Add padding to container elements */
 
 .container {
+  position: absolute;
+  right: 0;
+  margin: 20px;
+  max-width: 300px;
+  padding: 16px;
+  background-color: white;
   padding: 16px;
 }
 
