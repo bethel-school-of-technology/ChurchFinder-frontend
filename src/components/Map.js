@@ -63,7 +63,7 @@ function Map() {
                     setSelectedChurch(church);
                   }}
                 >
-                  <img src='/church-pin.svg' alt='Church Clipart Photos' />
+                  <img src='/theOne.svg' alt='Church Clipart Photos' />
                 </button>
               </div>
             </Marker>
