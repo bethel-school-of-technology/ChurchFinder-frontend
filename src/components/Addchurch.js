@@ -302,7 +302,7 @@ handleSubmit = e => {
                             )}
                         </div>
                         <div className="createAccount">
-                    <button type="submit">Sign Up</button>
+                    <button type="submit">Add Church</button>
                   </div>
                 </form>
             </div>
