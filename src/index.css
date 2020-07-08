@@ -35,15 +35,13 @@ nav {
 
 /*churchfinder church logo image*/
 .logo-icon {
-  width: 10%;
+  width: 7%;
   height: auto;
   margin-left: 50px;
 }
 
 .logo {
-  display: flex;
-  justify-content: space-evenly;
-  
+  display: flex;  
 }
 
 .nav-links {
