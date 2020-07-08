@@ -14,7 +14,7 @@ const Home = () => (
             <div>
                 <button onClick={e => window.location.href = '/Findchurch'}>Find A Church</button>
 
-                <button onClick={e => window.location.href = '/Addchurch'}>Add Your Church</button>
+                <button onClick={e => window.location.href = '/Addchurch'}>Add Church</button>
             </div>
 
         </div>
