@@ -261,7 +261,7 @@ handleSubmit = e => {
                             <label htmlFor="web_url"><b> Web URL: </b></label>
                             <input
                             className={formErrors.web_url.length > 0 ? "error" : null} 
-                            placeholder="Web_url"
+                            placeholder="https://www.yourchurch.com"
                             type="text"
                             name="web_url"
                             noValidate
