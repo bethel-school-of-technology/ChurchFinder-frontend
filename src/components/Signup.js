@@ -105,7 +105,6 @@ class Signup extends React.Component {
         return (
             <div id='background-container'>
             <img id='home-background-img' src='background.jpg' alt='homepage-background'></img>
-            <div className="wrapper">
                 <div className="form-wrapper" class="container">
                     <form onSubmit={this.handleSubmit} noValidate>
                         <fieldset>
@@ -206,7 +205,6 @@ class Signup extends React.Component {
                   </fieldset>
                 </form>
             </div>
-        </div>
         </div>
         );
      }
