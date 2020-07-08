@@ -335,6 +335,9 @@ button:active {
     justify-content: center;
     margin-top: 20px;
   }
+  .mapContainer{
+    margin-top: 20px;
+  }
 
   
  }
