@@ -288,5 +288,19 @@ button:active {
     font-size: 20px;
     margin-left: 10px;
   }
+
+  button{
+    width: 150px;
+  }
+
+  .home-text {
+    bottom: 63%;
+  }
+
+  .homepage-title{
+    margin-left: 60px;
+    font-size: 25px;
+  }
+
  }
 
