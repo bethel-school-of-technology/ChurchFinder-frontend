@@ -134,7 +134,7 @@ class Addchurch extends React.Component {
                 <div className="form-wrapper" class="container">
                     <form onSubmit={this.handleSubmit} noValidate>
                         <fieldset>
-                            <legend><h2>ADD Church</h2></legend>
+                            <legend><h2>ADD CHURCH</h2></legend>
                             <div className="name">
                                 {/* <label htmlFor="name"><b>Church Name: </b></label> */}
                                 <input
@@ -152,11 +152,11 @@ class Addchurch extends React.Component {
                                 )}
                             </div>
                             <div className="description">
-                                {/* <label htmlFor="description"><b>Enter Church Description: </b></label> */}
+                                <label htmlFor="description"><b>Describe a few things that your church has to offer.</b></label>
                                 <input
                                     id='description-input'
                                     className={formErrors.description.length > 0 ? "error" : null}
-                                    placeholder="Please describe your church"
+                                    placeholder="Church Description"
                                     type="text"
                                     name="description"
                                     noValidate
@@ -168,7 +168,7 @@ class Addchurch extends React.Component {
                             </div>
                             <br></br>
                             <div className="mailing_one">
-                                <label htmlFor="mailing_one"><b>Please Enter Mailing Address</b></label>
+                                <label htmlFor="mailing_one"><b>Enter Mailing Address</b></label>
                                 <input
                                     id='mailing_one-input'
                                     className={formErrors.mailing_one.length > 0 ? "error" : null}
