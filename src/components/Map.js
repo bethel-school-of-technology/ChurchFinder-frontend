@@ -33,7 +33,6 @@ function Map() {
 
   return (
     <div >
-
       <ReactMapGL
         className='mapContainer'
         {...viewport}
