@@ -97,7 +97,6 @@ class Signup extends React.Component {
             })
     };
 
-
     render() {
         const { formErrors } = this.state
         const { firstname, lastname, email, username, password, confirmpassword} = this.state
@@ -107,11 +106,12 @@ class Signup extends React.Component {
             <img id='home-background-img' src='background.jpg' alt='homepage-background'></img>
                 <div className="form-wrapper" class="container">
                     <form onSubmit={this.handleSubmit} noValidate>
+                        
                         <fieldset>
                             <legend> <h2>CREATE ACCOUNT</h2> </legend>                            
                         <div className="firstname">
-                            <label htmlFor="firstname"><b>First Name: </b></label>
                             <input
+                            id='firstname-input'
                             className={formErrors.firstname.length > 0 ? "error" : null} 
                             placeholder="First Name"
                             type="text"
@@ -119,14 +119,16 @@ class Signup extends React.Component {
                             noValidate
                             value={firstname}
                             onChange={this.handleChange}
+                            required
                             />
                             {formErrors.firstname.length > 0 && (
                                 <span className="errorMessage">{formErrors.firstname}</span>
                             )}
                         </div>
                         <div className="lastname">
-                            <label htmlFor="lastname"><b>Last Name: </b></label>
+                            {/* <label htmlFor="lastname"><b>Last Name: </b></label> */}
                             <input
+                            id='lastname-input'
                             className={formErrors.lastname.length > 0 ? "error" : null}
                             placeholder="Last Name"
                             type="text"
@@ -134,14 +136,16 @@ class Signup extends React.Component {
                             noValidate
                             value={lastname}
                             onChange={this.handleChange}
+                            required
                             />
                             {formErrors.lastname.length > 0 && (
                                 <span className="errorMessage">{formErrors.lastname}</span>
                             )}
                         </div>
                         <div className="email">
-                            <label htmlFor="email"><b>Email: </b></label>
+                            {/* <label htmlFor="email"><b>Email: </b></label> */}
                             <input
+                            id='email-input'
                             className={formErrors.email.length > 0 ? "error" : null}
                             placeholder="Email"
                             type="text"
@@ -149,14 +153,16 @@ class Signup extends React.Component {
                             noValidate
                             value={email}
                             onChange={this.handleChange}
+                            required
                             />
                             {formErrors.email.length > 0 && (
                                 <span className="errorMessage">{formErrors.email}</span>
                             )}
                         </div>
                         <div className="username">
-                            <label htmlFor="username"><b>Username: </b></label>
+                            {/* <label htmlFor="username"><b>Username: </b></label> */}
                             <input
+                            id='username-input'
                             className={formErrors.username.length > 0 ? "error" : null}
                             placeholder="Username"
                             type="text"
@@ -164,14 +170,16 @@ class Signup extends React.Component {
                             noValidate
                             value={username}
                             onChange={this.handleChange}
+                            required
                             />
                             {formErrors.username.length > 0 && (
                                 <span className="errorMessage">{formErrors.username}</span>
                             )}
                         </div>
                         <div className="password">
-                            <label htmlFor="password"><b>Password: </b></label>
+                            {/* <label htmlFor="password"><b>Password: </b></label> */}
                             <input
+                            id='password-input'
                             className={formErrors.password.length > 0 ? "error" : null}
                             placeholder="Password"
                             type="password"
@@ -179,21 +187,24 @@ class Signup extends React.Component {
                             noValidate
                             value={password}
                             onChange={this.handleChange}
+                            required
                             />
                             {formErrors.password.length > 0 && (
                                 <span className="errorMessage">{formErrors.password}</span>
                             )}
                         </div>
                         <div className="password2">
-                            <label htmlFor="password"><b>Confirm Password: </b></label>
+                            {/* <label htmlFor="password"><b>Confirm Password: </b></label> */}
                             <input
+                            id='confirmpassword-input'
                             className={formErrors.confirmpassword.length > 0 ? "error" : null}
-                            placeholder="Password"
+                            placeholder=" Repeat Password"
                             type="password"
                             name="confirmpassword"
                             noValidate
                             value={confirmpassword}
                             onChange={this.handleChange}
+                            required
                             />
                             {formErrors.confirmpassword.length > 0 && (
                                 <span className="errorMessage">{formErrors.confirmpassword}</span>

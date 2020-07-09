@@ -36,11 +36,11 @@ class Login extends React.Component {
                     <fieldset>
                     <legend> <h2>LOGIN</h2> </legend>
                     <div className="form-inputs">
-                        <label htmlFor="name"><b>Username: </b></label>
+                        {/* <label htmlFor="name"><b>Username: </b></label> */}
                         <input className='inputs' type='text' placeholder='Enter Username' name='username' value={username} onChange={this.handleChange} required></input>
                     </div>
                     <div className='form-inputs'>
-                        <label htmlFor='name'><b>Password: </b></label>
+                        {/* <label htmlFor='name'><b>Password: </b></label> */}
                         <input className='inputs' type='password' placeholder='Enter Password' name='password' value={password} onChange={this.handleChange} required></input>
                     </div>
                     <div className='clearfix'>
