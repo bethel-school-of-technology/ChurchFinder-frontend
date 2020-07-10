@@ -89,230 +89,31 @@ nav {
   box-sizing: border-box
 }
 
-*/
+/*STYLING FOR INPUTS*/
 
-/* #search-input {
-    display: block;
-    margin-bottom: 20px;
-    padding: 10px 10px 10px 10px;
-    border: 0;
-    border-radius:  4px;
-    background-color: #222;
-    font-size: 16px;
-    color: rgb(138, 136, 136);
-    width: 80px;
-} */
-
-input[type=text], input[type=password], input[type=number] {
-  width: 100%;
-  padding: 9px;
-  margin: 5px 0 22px 0;
-  display: block;
-  border: solid 1px black;
-  border-radius: 4px;
-  background: #d0f5de;
-  font-weight: bold;
-  color: black;
-}
-
-input[type=text]:focus, input[type=password], input[type=number]:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-/*styling for inputs*/
-
-#firstname-input {
+.inputs {
   display:inline-block;
-  width: 90%;
+  width: 100%;
   font-weight: bold;
   padding: 7px;
-  border-radius: 4px;
   border: solid 1px black;
+  border-radius: 4px;
   background: #d0f5de;
   margin: 4px 0 15px 0;
 }
 
-#firstname-input:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-#lastname-input {
-  display:inline-block;
-  width: 90%;
-  font-weight: bold;
-  padding: 7px;
-  border-radius: 4px;
-  border: solid 1px black;
-  background: #d0f5de;
-  margin: 4px 0 15px 0;  
-}
-
-#lastname-input:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-#email-input {
-  display:inline-block;
-  width: 90%;
-  font-weight: bold;
-  padding: 7px;
-  border-radius: 4px;
-  border: solid 1px black;
-  background: #d0f5de;
-  margin: 4px 0 15px 0;  
-}
-
-#email-input:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-#username-input {
-  display:inline-block;
-  width: 90%;
-  font-weight: bold;
-  padding: 7px;
-  border-radius: 4px;
-  border: solid 1px black;
-  background: #d0f5de;
-  margin: 4px 0 15px 0;  
-}
-
-#username-input:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-#password-input {
-  display:inline-block;
-  width: 90%;
-  font-weight: bold;
-  padding: 7px;
-  border-radius: 4px;
-  border: solid 1px black;
-  background: #d0f5de;
-  margin: 4px 0 15px 0;  
-}
-
-#password-input:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-#confirmpassword-input {
-  display:inline-block;
-  width: 90%;
-  font-weight: bold;
-  padding: 7px;
-  border-radius: 4px;
-  border: solid 1px black;
-  background: #d0f5de;
-  margin: 4px 0 15px 0;  
-}
-
-#confirmpassword-input:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-.inputs {
-  display:inline-block;
-  width: 90%;
-  font-weight: bold;
-  padding: 7px;
-  border-radius: 4px;
-  border: solid 1px black;
-  background: #d0f5de;
-  margin: 4px 0 15px 0; 
-}
-
 .inputs:focus {
-  background-color: #ddd;
+  background-color: rgb(240, 188, 164);
   outline: none;
 }
 
-#name-input {
-  display:inline-block;
-  width: 100%;
-  font-weight: bold;
-  padding: 7px;
-  border-radius: 4px;
-  border: solid 1px black;
-  background: #d0f5de;
-  margin: 4px 0 15px 0; 
+/* .inputs:valid {
+  border: solid 2px green;
 }
 
-#name-input:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-#description-input {
-  display:inline-block;
-  width: 100%;
-  font-weight: bold;
-  padding: 7px;
-  border-radius: 4px;
-  border: solid 1px black;
-  background: #d0f5de;
-  margin: 4px 0 15px 0; 
-}
-
-#name-input:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-#mailing_one-input {
-  display:inline-block;
-  width: 100%;
-  font-weight: bold;
-  padding: 7px;
-  border-radius: 4px;
-  border: solid 1px black;
-  background: #d0f5de;
-  margin: 4px 0 15px 0; 
-}
-
-#mailing_one-input:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-#mailing_two-input {
-  display:inline-block;
-  width: 100%;
-  font-weight: bold;
-  padding: 7px;
-  border-radius: 4px;
-  border: solid 1px black;
-  background: #d0f5de;
-  margin: 4px 0 15px 0; 
-}
-
-#mailing_two-input:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-#city-input {
-  display:inline-block;
-  width: 100%;
-  font-weight: bold;
-  padding: 7px;
-  border-radius: 4px;
-  border: solid 1px black;
-  background: #d0f5de;
-  margin: 4px 0 15px 0; 
-}
-
-#city-input:focus {
-  background-color: #ddd;
-  outline: none;
-}
+.inputs:invalid {
+  border: solid 2px rgb(250, 118, 118);
+} */
 
 #state-input {
   display:block;
@@ -326,7 +127,7 @@ input[type=text]:focus, input[type=password], input[type=number]:focus {
 }
 
 #state-input:focus {
-  background-color: #ddd;
+  background-color: rgb(240, 188, 164);
   outline: none;
 }
 
@@ -342,76 +143,49 @@ input[type=text]:focus, input[type=password], input[type=number]:focus {
 }
 
 #postalcode-input:focus {
-  background-color: #ddd;
+  background-color: rgb(240, 188, 164);
   outline: none;
 }
 
-#denomination-input {
-  display:block;
-  width: 100%;
-  font-weight: bold;
-  padding: 7px;
-  border-radius: 4px;
-  border: solid 1px black;
-  background: #d0f5de;
-  margin: 4px 0 15px 0; 
+/*LINK STYLING*/
+
+.addchurch-link {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  margin-left: 30px;
+ 
 }
 
-#denomination-input:focus {
-  background-color: #ddd;
-  outline: none;
+#addchurchlink {
+  color: black;
+  font-size: 30px;
+
 }
 
-#web_url-input {
-  display:block;
-  width: 100%;
-  font-weight: bold;
-  padding: 7px;
-  border-radius: 4px;
-  border: solid 1px black;
-  background: #d0f5de;
-  margin: 4px 0 15px 0;  
+#addchurchlink:hover {
+  color: rgb(245, 168, 26);
 }
 
-#web_url-input:focus {
-  background-color: #ddd;
-  outline: none;
+#loginlink {
+  color: black;
+  font-size: 20px;
 }
 
-#longitude-input {
-  display:block;
-  width: 100%;
-  font-weight: bold;
-  padding: 7px;
-  border-radius: 4px;
-  border: solid 1px black;
-  background: #d0f5de;
-  margin: 4px 0 15px 0; 
-}
-
-#longitude-input:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-#latitude-input {
-  display:block;
-  width: 100%;
-  font-weight: bold;
-  padding: 7px;
-  border-radius: 4px;
-  border: solid 1px black;
-  background: #d0f5de;
-  margin: 4px 0 15px 0; 
-}
-
-#latitude-input:focus {
-  background-color: #ddd;
-  outline: none;
+#loginlink:hover {
+  color: rgb(19, 27, 151);
 }
 
 
+#signuplink {
+  color: black;
+  font-size: 20px;
+}
 
+#signuplink:hover {
+  color: rgb(19, 27, 151);
+}
 
 hr {
   border: 1px solid #f1f1f1;
@@ -423,10 +197,10 @@ fieldset {
   margin-right: 40px;
   padding-left: 100px;
   padding-right: 100px;
-}
+ } 
 
 legend {
- padding: 10px;
+  padding: 10px;
 }
 
 /* Set a style for all buttons */
