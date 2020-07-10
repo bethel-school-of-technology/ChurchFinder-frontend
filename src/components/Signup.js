@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import {withRouter} from 'react-router-dom';
+import {withRouter, Link} from 'react-router-dom';
 
 const emailRegex = RegExp(
     /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
@@ -212,6 +212,8 @@ class Signup extends React.Component {
                         </div>
                         <div className="createAccount">
                     <button type="submit">Sign Up</button>
+
+                    <Link to="/login">Already have an account?</Link>
                   </div>
                   </fieldset>
                 </form>
