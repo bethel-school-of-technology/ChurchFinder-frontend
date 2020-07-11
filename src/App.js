@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Nav from './components/Nav';
 import Home from './screens/Home';
-import Addchurch from './components/Addchurch';
-import Signup from './components/Signup';
-import Login from './components/Login';
+import Addchurch from './screens/Addchurch';
+import Signup from './screens/Signup';
+import Login from './screens/Login';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Findchurch from './screens/Findchurch';
 

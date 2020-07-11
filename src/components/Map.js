@@ -17,13 +17,13 @@ function Map() {
 
   const mapRef = useRef();
 
-
+  //You cannot use any of the existing lifecycle methods (componentDidMount, componentDidUpdate, componentWillUnmount etc.) in a hook. useEffect Hook is like a componentDidMount, componentDidUpdate, and componentWillUnmount combined.
+  
   useEffect(() => {
     (async () => {
       const churchList = await listChurches();
       setChurches(churchList);
     })();
-    console.log(churches);
 
     return () => {
       // clean up things ...
@@ -102,7 +102,7 @@ function Map() {
                   </h4>
                 </li>
                 <li>
-                  <a className='church-links' href={selectedChurch.Web_URL} target='_blank'>{selectedChurch.Web_URL}</a>
+                  <a className='church-links' href={selectedChurch.Web_URL} target='_blank' rel='noopener noreferrer'>{selectedChurch.Web_URL}</a>
                 </li>
               </ul>
 
