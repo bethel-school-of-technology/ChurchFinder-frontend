@@ -1,6 +1,8 @@
 import React from 'react';
 import Map from '../components/Map';
 import { Link } from 'react-router-dom';
+import ChurchSearch from '../components/churchsearch';
+
 
 const Findchurch = () => (
     <div>
@@ -8,7 +10,9 @@ const Findchurch = () => (
             <Link id='addchurchlink' to="/addchurch">Don't see your church?</Link>
         </div>
 
-        <Map />        
+        <Map />  
+        
+        <ChurchSearch></ChurchSearch>    
 
     </div>
 );

@@ -147,20 +147,39 @@ nav {
   outline: none;
 }
 
+#churchsearch-input {
+  display:inline-block;
+  width: 40%;
+  font-weight: bold;
+  padding: 7px;
+  border: solid 1px black;
+  border-radius: 4px;
+  background: #d0f5de;
+  margin: 4px 0 15px 0;
+}
+
+#churchsearch-input:focus {
+  background-color: rgb(240, 188, 164);
+  outline: none;
+
+}
+
+
 /*LINK STYLING*/
 
 .addchurch-link {
   display: flex;
-  justify-content: center;
-  margin-top: 10px;
+  justify-content: center;  
+  margin-top: 15px;
   margin-bottom: 40px;
-  margin-left: 30px;
+  /* margin-left: 30px; */
  
 }
 
 #addchurchlink {
   color: black;
   font-size: 30px;
+  /* margin-left: 200px; */
 
 }
 
@@ -192,6 +211,8 @@ hr {
   margin-bottom: 25px;
 }
 
+/*FORM STYLING*/
+
 fieldset {
   margin-left: 40px;
   margin-right: 40px;
@@ -201,6 +222,11 @@ fieldset {
 
 legend {
   padding: 10px;
+}
+
+.searchForm {
+  margin-top: 20px;
+  margin-left: 40px;
 }
 
 /* Set a style for all buttons */
@@ -408,6 +434,11 @@ button:active {
     margin-top: 20px;
   }
 
-  
+   .addchurch-link {  
+    margin-top: 50px;
+    margin-bottom: 15px;
+    margin-left: 30px;
+   
+  }   
  }
 

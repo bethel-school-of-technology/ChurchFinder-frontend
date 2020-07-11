@@ -4,7 +4,6 @@
 
 import React from 'react';
 import axios from 'axios';
-import { withRouter, Link } from 'react-router-dom';
 
 class Addchurch extends React.Component {
     constructor(props) {
@@ -207,7 +206,7 @@ class Addchurch extends React.Component {
 
 export default Addchurch;
 
-
+//FORM WITH VALIDATION THAT DOES NOT WORK
 
 // import React from 'react';
 // import axios from 'axios';

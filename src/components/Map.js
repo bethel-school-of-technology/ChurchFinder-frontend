@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import { listChurches } from './Api';
+import { listChurches } from './churchListApi';
 import "react-map-gl-geocoder/dist/mapbox-gl-geocoder.css";
 
 function Map() {
@@ -12,7 +12,7 @@ function Map() {
     latitude: 41.0799898,
     width: '97vw',
     height: '70vh',
-    zoom: 11
+    zoom: 10
   });
 
   const mapRef = useRef();
