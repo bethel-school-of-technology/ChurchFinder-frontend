@@ -91,6 +91,23 @@ nav {
 
 /*STYLING FOR INPUTS*/
 
+input {
+  display:inline-block;
+  width: 100%;
+  font-weight: bold;
+  padding: 7px;
+  border: solid 1px black;
+  border-radius: 4px;
+  background: #d0f5de;
+  margin: 4px 0 15px 0;
+
+}
+
+input:focus {
+  background-color: rgb(240, 188, 164);
+  outline: none;
+}
+
 .inputs {
   display:inline-block;
   width: 100%;
