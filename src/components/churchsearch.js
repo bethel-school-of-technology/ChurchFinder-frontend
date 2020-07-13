@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios;'
 // import searchChurches from './churchsearchApi';
 
 class ChurchSearch extends React.Component {
@@ -7,7 +8,7 @@ class ChurchSearch extends React.Component {
 
         this.state = {
             query: '',
-            data: []
+            // data: []
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
@@ -21,27 +22,40 @@ class ChurchSearch extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        async function API(url) {
-            const response = await fetch('http://localhost:5000/churches/search');
-            const data = await response.json();
-            return data;
-            console.log(data);
-            console.log(response);
+        const { query } = this.state;
 
-        }
+        axios.get('http://localhost:5000/churches/search', { query }) 
+        .then(function (response) {
+            console.log(response)
+        })
+        .catch(function (error) {
+            console.log(error)
+        })
     }
+
+    // handleSubmit = (e) => {
+    //     e.preventDefault()
+    //     async function API(url) {
+    //         const response = await fetch('http://localhost:5000/churches/search');
+    //         const data = await response.json();
+    //         return data;
+    //         console.log(data);
+    //         console.log(response);
+
+    //     }
+    // }
 
     render() {
         return (
             <div>
-                <form onChange={this.handleSubmit}>
-                    <input type='text'
-                    placeholder='Search for your church' name='query' value='query'
+                <form id='churchsearchform' onChange={this.handleSubmit}>
+                    <input className='inputs' type='text' name='query' value={query}
+                    placeholder='Enter keywords about the church you are looking for' 
                     onChange={this.handleChange}></input>
                     <button type='submit'>Search</button>
                 </form>
 
-                <div>{this.state.data}</div>
+                <div>{this.state.response}</div>
             </div>
         )
     }

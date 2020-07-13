@@ -229,6 +229,12 @@ legend {
   margin-left: 40px;
 }
 
+#churchsearchform {
+  display:flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
 /* Set a style for all buttons */
 
 button {
