@@ -147,7 +147,19 @@ nav {
   outline: none;
 }
 
-#churchsearch-input {
+/* Styles the Churches List */
+#churchsearch-display {
+  display:inline-block;
+  width: 50%;
+  padding: 10px;
+  border: solid 2px black;
+  border-radius: 5px;
+  background: #8bec90;
+  margin: 20px 0 15px 400px;
+}
+
+
+/* #searchbox-input {
   display:inline-block;
   width: 40%;
   font-weight: bold;
@@ -155,13 +167,31 @@ nav {
   border: solid 1px black;
   border-radius: 4px;
   background: #d0f5de;
-  margin: 4px 0 15px 0;
+  margin: 4px 0 15px 500px;
+
 }
 
-#churchsearch-input:focus {
+#searchbox-input:focus {
   background-color: rgb(240, 188, 164);
   outline: none;
 
+} */
+
+/* Styles the search bar underneath the map */
+.form-control {
+  display:inline-block;
+  width: 40%;
+  font-weight: bold;
+  padding: 7px;
+  border: solid 1px black;
+  border-radius: 4px;
+  background: #d0f5de;
+  margin: 4px 0 15px 60px;
+}
+
+.form-control:focus {
+  background-color: rgb(240, 188, 164);
+  outline: none;
 }
 
 
@@ -206,9 +236,24 @@ nav {
   color: rgb(19, 27, 151);
 }
 
+.church-links {
+  color: orange;
+}
+
 hr {
   border: 1px solid #f1f1f1;
   margin-bottom: 25px;
+}
+
+/* Styles the unordered churches list */
+.list-group {
+  list-style: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.list-group-item {
+  margin-top: 20px;
 }
 
 /*FORM STYLING*/
@@ -233,6 +278,12 @@ legend {
   display:flex;
   justify-content: center;
   margin-top: 30px;
+}
+/*div styling*/
+#loading-status {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 /* Set a style for all buttons */
@@ -403,6 +454,17 @@ button:active {
     font-size: 25px;
   }
 
+  #churchsearch-input {
+    display:inline-block;
+    width: 70%;
+    padding: 10px;
+    border: solid 2px black;
+    border-radius: 5px;
+    background: #8bec90;
+    margin: 20px 0 15px 250px;
+  }
+ 
+
  }
 
  /*cell phone*/
@@ -445,6 +507,17 @@ button:active {
     margin-bottom: 15px;
     margin-left: 30px;
    
-  }   
+  } 
+  
+  #churchsearch-input {
+    display:inline-block;
+    width: 90%;
+    padding: 10px;
+    border: solid 2px black;
+    border-radius: 5px;
+    background: #8bec90;
+    margin: 20px 0 15px 200px;
+  }
+ 
  }
 

@@ -1,81 +1,98 @@
-import React from 'react';
+import React, { Component } from 'react';
+import ChurchDataService from '../services/church.service';
 
-class SearchBox extends React.Component {
+
+class SearchBox extends Component {
     constructor(props) {
         super(props);
+        this.onChangeSearchChurch = this.onChangeSearchChurch.bind(this);
+        this.retrieveChurches = this.retrieveChurches.bind(this);
+        this.searchChurch = this.searchChurch.bind(this);
 
         this.state = {
-            loading: true,
-            searchDenomination: '',
-            denomination: null
+            churches: [],
+            currentChurch: null,
+            currentIndex: -1,
+            searchChurch: ''
+
         };
-        // this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleInput = this.handleInput.bind(this);
     }
 
-    handleInput = (e) => {
+    componentDidMount() {
+        this.retrieveChurches();
+    }
+
+    onChangeSearchChurch = (e) => {
         console.log(e.target.value);
-        this.setState({ searchDenomination: e.target.value });
+        const searchChurch = e.target.value;
+
+        this.setState({
+            searchChurch: searchChurch
+        });
     }
 
-    async componentDidMount() {
-        const url = 'http://localhost:5000/churches/search/denomination/Episcopal';
-        const response = await fetch(url);
-        const data = await response.json();
-        console.log(data);
-        this.setState({ denonminations: data.results, loading: false });
-
-
+    retrieveChurches() {
+        ChurchDataService.getAll()
+            .then(response => {
+                this.setState({
+                    churches: response.data
+                });
+                console.log(response.data);
+            })
+            .catch(error => {
+                console.log(error);
+            });
     }
 
-    // handleSubmit = (e) => {
-    //     async function findDenominations() {
-    //         const url = 'http://localhost:5000/churches/search/denomination/:search';
-    //         const response = await fetch(url);
-    //         const data = await response.json();
-    //         this.setState({ denonminations: data.results });
-    //     }
-    // }
-
-
-    // axios.get('http://localhost:5000/churches/search/denomination/:search', { denominations })
-    //     .then(function (response) {
-    //         console.log(response)
-    //     })
-    //     .catch(function (error) {
-    //         console.log(error)
-    //     })
-
-    // handleSubmit = (e) => {
-    //     e.preventDefault()
-    //     async function API(url) {
-    //         const response = await fetch('http://localhost:5000/churches/search');
-    //         const data = await response.json();
-    //         return data;
-    //         console.log(data);
-    //         console.log(response);
-
-    //     }
-    // }
+    searchChurch() {
+        ChurchDataService.findByDenomination(this.state.searchChurch)
+            .then(response => {
+                this.setState({
+                    churches: response.data
+                });
+                console.log(response.data);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    }
 
     render() {
+        const { searchChurch, churches, currentChurch, currentIndex } = this.state;
         return (
-            <div>
-
-                <input className='inputs' type='text'
-                    placeholder='Search for a specific denomination'
-                    onChange={this.handleInput}></input>
-
+            <div id='churchsearch-display'>
+                    <input
+                    type='text'                    
+                    className='form-control'
+                    placeholder='Search by denomination'
+                    value={searchChurch}
+                    onChangeSearchChurch={this.onChangeSearchChurch}
+                />
+                <button
+                    type='button'
+                    onClick={this.searchChurch}>Search</button>
                 <div>
-                    {this.state.loading ? <div>loading...</div> : <div>No churches found.</div>}
+                    <h1>Churches List</h1>
+                    <ul className='list-group'>
+                        {churches && churches.map((church, index) => (
+                            <li
+                                className={
+                                    'list-group-item' +
+                                    (index === currentIndex ? 'active' : '')
+                                }
+                                key={index}>
+                                <h3>{church.Name}</h3>
+                                {church.Mailing_One}<br></br>
+                                {church.City}, {church.State}, {church.PostalCode} <br></br>
+                                {church.Denomination}<br></br>
+                                <a
+                                    className='church-links'
+                                    href={church.Web_URL} target='_blank'>{church.Web_URL} </a>
+                            </li>
+                        ))}
+
+                    </ul>
                 </div>
-
-                <div>
-                    {this.state.denomination}
-                </div>
-
-
-
             </div>
         )
     }
