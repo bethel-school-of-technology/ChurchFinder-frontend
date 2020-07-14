@@ -6,7 +6,7 @@ class ChurchDataService {
     }
 
     findByDenomination(Denomination) {
-        return http.get(`/churches/search/denomination?denomination=${Denomination}`);
+        return http.get(`/churches/search/denomination/${Denomination}`);
     }
 }
 
