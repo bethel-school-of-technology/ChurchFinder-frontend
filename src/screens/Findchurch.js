@@ -1,5 +1,6 @@
 import React from 'react';
 import Map from '../components/Map';
+import SearchBox from '../components/searchbox'
 import { Link } from 'react-router-dom';
 
 const Findchurch = () => (
@@ -8,7 +9,9 @@ const Findchurch = () => (
             <Link id='addchurchlink' to="/addchurch">Don't see your church?</Link>
         </div>
 
-        <Map />        
+        <Map />   
+
+        <SearchBox></SearchBox>     
 
     </div>
 );
