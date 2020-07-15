@@ -44,7 +44,7 @@ class SearchBox extends Component {
             });
     }
 
-    //working on this to find churches by denomination
+    //Searches for churches by denomination
     searchChurch() {
         ChurchDataService.findByDenomination(this.state.searchChurch)
             .then(response => {

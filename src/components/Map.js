@@ -76,11 +76,6 @@ function Map() {
             className='popup'
             latitude={parseFloat(selectedChurch.Latitude)}
             longitude={parseFloat(selectedChurch.Longitude)}
-
-          // In the video they use an onClose function to close Popup window but it wont allow web_URL to be clicked on
-          // onClose ={() => {
-          //   setSelectedChurch(null);
-          // }}
           >
 
             {/* Using a simple redirect to close the popup window.  Looking for a smoother way to do so. */}
