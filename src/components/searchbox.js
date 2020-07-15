@@ -67,7 +67,7 @@ class SearchBox extends Component {
                     className='form-control'
                     placeholder='Search by denomination'
                     value={searchChurch}
-                    onChangeSearchChurch={this.onChangeSearchChurch}
+                    onChange={this.onChangeSearchChurch}
                 />
                 <button
                     type='button'
