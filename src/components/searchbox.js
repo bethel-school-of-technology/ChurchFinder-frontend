@@ -31,6 +31,7 @@ class SearchBox extends Component {
         });
     }
 
+    //Retrieves all churches from the database and lists them under the map
     retrieveChurches() {
         ChurchDataService.getAll()
             .then(response => {
@@ -62,8 +63,8 @@ class SearchBox extends Component {
         const { searchChurch, churches, currentChurch, currentIndex } = this.state;
         return (
             <div id='churchsearch-display'>
-                    <input
-                    type='text'                    
+                <input
+                    type='text'
                     className='form-control'
                     placeholder='Search by denomination'
                     value={searchChurch}
@@ -91,7 +92,6 @@ class SearchBox extends Component {
                                     href={church.Web_URL} target='_blank'>{church.Web_URL} </a>
                             </li>
                         ))}
-
                     </ul>
                 </div>
             </div>

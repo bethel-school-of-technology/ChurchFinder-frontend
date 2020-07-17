@@ -8,7 +8,7 @@ import Login from './screens/Login';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Findchurch from './screens/Findchurch';
 
-function App() { 
+function App() {
 
   return (
     <Router>
@@ -22,12 +22,12 @@ function App() {
           <Route path="/FindChurch" component={Findchurch} />
         </Switch>
         <div>
-        
+
         </div>
       </div>
     </Router>
 
-   
+
 
 
   )

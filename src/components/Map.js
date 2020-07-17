@@ -18,7 +18,6 @@ function Map() {
   const mapRef = useRef();
 
   //You cannot use any of the existing lifecycle methods (componentDidMount, componentDidUpdate, componentWillUnmount etc.) in a hook. useEffect Hook is like a componentDidMount, componentDidUpdate, and componentWillUnmount combined.
-  
   useEffect(() => {
     (async () => {
       const churchList = await listChurches();
@@ -69,7 +68,7 @@ function Map() {
           )
         }
 
-        {/* ternary operator - if it is the selectedChurch then show Popup.  If not null.*/}
+        {/* ternary operator - if it is the selectedChurch then show Popup.  If not null. */}
 
         {selectedChurch ? (
           <Popup

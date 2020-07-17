@@ -12,12 +12,8 @@ const Home = () => (
 
                 <button onClick={e => window.location.href = '/Addchurch'}>Add Church</button>
             </div>
-
         </div>
-
     </div>
-
-
 );
 
 export default Home;

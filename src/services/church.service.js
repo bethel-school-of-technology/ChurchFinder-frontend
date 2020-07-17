@@ -6,7 +6,7 @@ class ChurchDataService {
     }
 
     
-//working on this to find churches by denomination
+//finds churches by denomination
     findByDenomination(Denomination) {
         return http.get(`/churches/search/denomination/${Denomination}`);
     }

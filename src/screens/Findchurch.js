@@ -9,9 +9,9 @@ const Findchurch = () => (
             <Link id='addchurchlink' to="/addchurch">Don't see your church?</Link>
         </div>
 
-        <Map />   
+        <Map />
 
-        <SearchBox></SearchBox>     
+        <SearchBox></SearchBox>
 
     </div>
 );
